@@ -1,0 +1,281 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://undefined - Imgur.png" type="Texture" id=2]
+[ext_resource path="res://Player/GuiInterfaz/hud.gd" type="Script" id=3]
+[ext_resource path="res://Player/Weapond/raycast_manager.gd" type="Script" id=4]
+[ext_resource path="res://Player/Weapond/Weapons/Unarmed/unarmed.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Player/Weapond/Weapon.gd" type="Script" id=6]
+[ext_resource path="res://Player/Weapond/weapon_manager.gd" type="Script" id=8]
+
+[sub_resource type="CapsuleMesh" id=1]
+radius = 0.5
+mid_height = 2.0
+
+[sub_resource type="CapsuleShape" id=2]
+radius = 0.5
+height = 2.0
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends Spatial
+
+#func _physics_process(delta):
+##	for idx in get_slide_count():
+##			var collision = get_slide_collision(idx)
+##			if collision.collider.is_in_group(\"bodies\"):
+##				collision.collider.apply_central_impulse(-collision.normal * velocity.length() * push)
+
+	
+	
+
+"
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 0.321427, 0.331875, 0.287418 )
+
+[sub_resource type="Animation" id=7]
+resource_name = "Deslizarse"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 90, 0, 0 ), Vector3( 154.834, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MeshInstance:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0.192769, 1.82304, 0.0169195 ), Vector3( 0.192769, 0.967947, 0.656546 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Head:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2.73837, 0 ), Vector3( 0, 1.63848, 1.11102 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Head:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 5.9 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.192769, 1.82304, 0.0169195 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MeshInstance:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 90, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 90, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MeshInstance:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.192769, 1.82304, 0.0169195 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Head:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2.73837, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Head:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+
+[node name="Player" type="KinematicBody" groups=["Player"]]
+collision_layer = 7
+collision_mask = 7
+script = ExtResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.192769, 1.82304, 0.0169195 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0512077, 1.61493, 0 )
+shape = SubResource( 2 )
+
+[node name="Head" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.73837, 0 )
+script = SubResource( 3 )
+
+[node name="RayManager" type="Spatial" parent="Head" groups=["RayManager"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.01893 )
+script = ExtResource( 4 )
+
+[node name="Camera" type="Camera" parent="Head"]
+
+[node name="Normal" type="RayCast" parent="Head/Camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.140813, -0.276949, -0.0666676 )
+enabled = true
+cast_to = Vector3( 0, -1, -2 )
+collision_mask = 2
+
+[node name="RayCast" type="RayCast" parent="Head/Camera"]
+visible = false
+cast_to = Vector3( 0, -1, -60 )
+
+[node name="Sprite" type="Sprite" parent="Head/Camera"]
+visible = false
+position = Vector2( 960, 540 )
+texture = ExtResource( 2 )
+
+[node name="DetectionUp" type="RayCast" parent="Head/Camera"]
+transform = Transform( 1, 0, 0, 0, -0.0785113, -0.996913, 0, 0.996913, -0.0785113, 0.109761, 0.409906, -0.637162 )
+enabled = true
+cast_to = Vector3( 0, -1.5, 0 )
+collision_mask = 241
+debug_shape_thickness = 5
+
+[node name="DetectionDown" type="RayCast" parent="Head/Camera"]
+transform = Transform( 1, 0, 0, 0, -0.0260025, -0.999662, 0, 0.999662, -0.0260025, 0.0786467, -0.439737, -0.760655 )
+enabled = true
+cast_to = Vector3( 0, -1.5, 0 )
+collision_mask = 116
+debug_shape_thickness = 5
+
+[node name="Crosshair" type="RayCast" parent="Head/Camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.73837, 0 )
+visible = false
+collision_mask = 2
+
+[node name="Weaponds" type="Node2D" parent="Head/Camera"]
+script = ExtResource( 8 )
+
+[node name="unarmed" parent="Head/Camera/Weaponds" instance=ExtResource( 5 )]
+
+[node name="weapon_1" type="Node2D" parent="Head/Camera/Weaponds"]
+script = ExtResource( 6 )
+
+[node name="weapon_2" type="Node2D" parent="Head/Camera/Weaponds"]
+script = ExtResource( 6 )
+
+[node name="touching_ground" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.113807, 0 )
+shape = SubResource( 6 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Deslizarse = SubResource( 7 )
+anims/Idle = SubResource( 9 )
+anims/RESET = SubResource( 8 )
+
+[node name="HUD" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 3 )
+
+[node name="Background" type="ColorRect" parent="HUD"]
+margin_left = 163.0
+margin_top = 924.0
+margin_right = 260.0
+margin_bottom = 964.0
+rect_scale = Vector2( 3, 3 )
+color = Color( 0.0862745, 0.0862745, 0.0862745, 1 )
+
+[node name="HealthUI" type="Label" parent="HUD/Background"]
+margin_left = 12.0
+margin_top = 4.33331
+margin_right = 86.0
+margin_bottom = 18.3333
+text = "Health: 100"
+
+[node name="WeaponUI" type="Label" parent="HUD/Background"]
+margin_left = 10.0
+margin_top = 20.0
+margin_right = 87.0
+margin_bottom = 34.0
+text = "Pistol:25/50"
+
+[node name="Display" type="ColorRect" parent="HUD/Background"]
+margin_left = -47.6667
+margin_top = -1.0
+margin_right = -0.666664
+margin_bottom = 39.0
+color = Color( 0.0156863, 0.0156863, 0.0156863, 1 )
+
+[node name="WeaponSlot" type="Label" parent="HUD/Background/Display"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "1"
