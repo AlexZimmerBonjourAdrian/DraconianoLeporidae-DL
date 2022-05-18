@@ -15,11 +15,16 @@ namespace StarterAssets
 		[Tooltip("Move speed of the character in m/s")]
 		public float MoveSpeed = 4.0f;
 		[Tooltip("Sprint speed of the character in m/s")]
-		public float SprintSpeed = 6.0f;
+		public float SprintSpeed = 12.0f;
 		[Tooltip("Rotation speed of the character")]
 		public float RotationSpeed = 1.0f;
 		[Tooltip("Acceleration and deceleration")]
 		public float SpeedChangeRate = 10.0f;
+		[Tooltip("Dash Speed")]
+		public float SpeedDash = 8.0f;
+		[Tooltip("Dash Speed")]
+		public float UpSpeed = 2.0f;
+
 
 		[Space(10)]
 		[Tooltip("The height the player can jump")]
@@ -59,7 +64,9 @@ namespace StarterAssets
 		private float _rotationVelocity;
 		private float _verticalVelocity;
 		private float _terminalVelocity = 53.0f;
-
+		private float _dashvelocity = 40f;
+		private float _slicingvelocity = 20f;
+		private float _speedrunning = 20f;
 		// timeout deltatime
 		private float _jumpTimeoutDelta;
 		private float _fallTimeoutDelta;
@@ -73,6 +80,7 @@ namespace StarterAssets
 		
 		private bool IsCurrentDeviceMouse => _playerInput.currentControlScheme == "KeyboardMouse";
 
+		private bool IsInterior	= false;
 		private void Awake()
 		{
 			// get a reference to our main camera
@@ -95,9 +103,17 @@ namespace StarterAssets
 
 		private void Update()
 		{
-			JumpAndGravity();
-			GroundedCheck();
-			Move();
+			if(IsInterior == false)
+            {
+                JumpAndGravity();
+                GroundedCheck();
+                Move();
+            }
+			else
+            {
+
+            }
+			
 		}
 
 		private void LateUpdate()
@@ -134,6 +150,23 @@ namespace StarterAssets
 			}
 		}
 
+
+		private void running()
+        {
+   //         // set target speed based on move speed, sprint speed and if sprint is pressed
+   //         float targetSpeed = _input.sprint ? _speedrunning : MoveSpeed;
+			
+			//if (_input.move == Vector2.zero) targetSpeed = 0.0f;
+		}
+
+		private void Dash()
+        {
+			//float targetSpeed = _input.dash ? SpeedDash : MoveSpeed;
+
+			//float currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;
+			//float speedOffset = 0.1f;
+
+		}
 		private void Move()
 		{
 			// set target speed based on move speed, sprint speed and if sprint is pressed
