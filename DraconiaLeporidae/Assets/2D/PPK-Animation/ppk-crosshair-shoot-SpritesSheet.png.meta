@@ -1,0 +1,360 @@
+fileFormatVersion: 2
+guid: 662f299655e30c245876d3e8d704bc87
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8277093132812086350
+    second: ppk-crosshair-shoot-SpritesSheet_0
+  - first:
+      213: 933538720181962078
+    second: ppk-crosshair-shoot-SpritesSheet_1
+  - first:
+      213: -37008851401405190
+    second: ppk-crosshair-shoot-SpritesSheet_2
+  - first:
+      213: 8029006315102829655
+    second: ppk-crosshair-shoot-SpritesSheet_3
+  - first:
+      213: 1553024984437604967
+    second: ppk-crosshair-shoot-SpritesSheet_4
+  - first:
+      213: -1559623525352094716
+    second: ppk-crosshair-shoot-SpritesSheet_5
+  - first:
+      213: 8363436876953299319
+    second: ppk-crosshair-shoot-SpritesSheet_6
+  - first:
+      213: 8336669224319092077
+    second: ppk-crosshair-shoot-SpritesSheet_7
+  - first:
+      213: 8368238996605179046
+    second: ppk-crosshair-shoot-SpritesSheet_8
+  - first:
+      213: 2997117465421211936
+    second: ppk-crosshair-shoot-SpritesSheet_9
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ppk-crosshair-shoot-SpritesSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1454.5454
+        height: 818
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b319ed46abd12d80800000000000000
+      internalID: -8277093132812086350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-crosshair-shoot-SpritesSheet_1
+      rect:
+        serializedVersion: 2
+        x: 1454
+        y: 0
+        width: 1454.5454
+        height: 818
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e55c488158894fc00800000000000000
+      internalID: 933538720181962078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-crosshair-shoot-SpritesSheet_2
+      rect:
+        serializedVersion: 2
+        x: 2908
+        y: 0
+        width: 1454.5454
+        height: 818
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afc8cae45a48c7ff0800000000000000
+      internalID: -37008851401405190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-crosshair-shoot-SpritesSheet_3
+      rect:
+        serializedVersion: 2
+        x: 4362
+        y: 0
+        width: 1454.5454
+        height: 818
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75c721f34b2cc6f60800000000000000
+      internalID: 8029006315102829655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-crosshair-shoot-SpritesSheet_4
+      rect:
+        serializedVersion: 2
+        x: 5816
+        y: 0
+        width: 1454.5454
+        height: 818
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 762c5bcbef37d8510800000000000000
+      internalID: 1553024984437604967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-crosshair-shoot-SpritesSheet_5
+      rect:
+        serializedVersion: 2
+        x: 7270
+        y: 0
+        width: 1454.5454
+        height: 818
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 404cb0cbaaa1b5ae0800000000000000
+      internalID: -1559623525352094716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-crosshair-shoot-SpritesSheet_6
+      rect:
+        serializedVersion: 2
+        x: 8724
+        y: 0
+        width: 1454.5454
+        height: 818
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77924383785e01470800000000000000
+      internalID: 8363436876953299319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-crosshair-shoot-SpritesSheet_7
+      rect:
+        serializedVersion: 2
+        x: 10178
+        y: 0
+        width: 1454.5454
+        height: 818
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d65887d6d7cc1b370800000000000000
+      internalID: 8336669224319092077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-crosshair-shoot-SpritesSheet_8
+      rect:
+        serializedVersion: 2
+        x: 11632
+        y: 0
+        width: 1454.5454
+        height: 818
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a41934d705f12470800000000000000
+      internalID: 8368238996605179046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-crosshair-shoot-SpritesSheet_9
+      rect:
+        serializedVersion: 2
+        x: 13086
+        y: 0
+        width: 1454.5454
+        height: 818
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 029ec849476e79920800000000000000
+      internalID: 2997117465421211936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

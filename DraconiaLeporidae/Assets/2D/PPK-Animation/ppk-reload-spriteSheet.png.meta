@@ -1,0 +1,552 @@
+fileFormatVersion: 2
+guid: f18d865abcd063e46b5fafcc9fe03a6c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8244651552659098679
+    second: ppk-reload-spriteSheet_0
+  - first:
+      213: 2983151060915483460
+    second: ppk-reload-spriteSheet_1
+  - first:
+      213: 8541371536287450321
+    second: ppk-reload-spriteSheet_2
+  - first:
+      213: 7373417273328623271
+    second: ppk-reload-spriteSheet_3
+  - first:
+      213: 7904747175995060488
+    second: ppk-reload-spriteSheet_4
+  - first:
+      213: -1334024100876643210
+    second: ppk-reload-spriteSheet_5
+  - first:
+      213: 2969285672351923547
+    second: ppk-reload-spriteSheet_6
+  - first:
+      213: 9115726839284684344
+    second: ppk-reload-spriteSheet_7
+  - first:
+      213: 4197996826003362196
+    second: ppk-reload-spriteSheet_8
+  - first:
+      213: 2441950191594654783
+    second: ppk-reload-spriteSheet_9
+  - first:
+      213: 1242042224923499081
+    second: ppk-reload-spriteSheet_10
+  - first:
+      213: -6404597300889520401
+    second: ppk-reload-spriteSheet_11
+  - first:
+      213: 3001634900368610948
+    second: ppk-reload-spriteSheet_12
+  - first:
+      213: 3567927505193538508
+    second: ppk-reload-spriteSheet_13
+  - first:
+      213: -8212471210898158487
+    second: ppk-reload-spriteSheet_14
+  - first:
+      213: 1809939367146214148
+    second: ppk-reload-spriteSheet_15
+  - first:
+      213: -5966198281286454439
+    second: ppk-reload-spriteSheet_16
+  - first:
+      213: -5223575750007937061
+    second: ppk-reload-spriteSheet_17
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ppk-reload-spriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 888.8889
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c3b1ea481d159d80800000000000000
+      internalID: -8244651552659098679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-reload-spriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 0
+        width: 888.8889
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4437231a518466920800000000000000
+      internalID: 2983151060915483460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-reload-spriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 0
+        width: 888.8889
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d4cb0b782c098670800000000000000
+      internalID: 8541371536287450321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-reload-spriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 0
+        width: 888.8889
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ae5b7da1f3a35660800000000000000
+      internalID: 7373417273328623271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-reload-spriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 3552
+        y: 0
+        width: 888.8889
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8013578ecad43bd60800000000000000
+      internalID: 7904747175995060488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-reload-spriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 4440
+        y: 0
+        width: 888.8889
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6741071f5289c7de0800000000000000
+      internalID: -1334024100876643210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-reload-spriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 5328
+        y: 0
+        width: 888.8889
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5d71394695053920800000000000000
+      internalID: 2969285672351923547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-reload-spriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 6216
+        y: 0
+        width: 888.8889
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 836de0d5341918e70800000000000000
+      internalID: 9115726839284684344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-reload-spriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 7104
+        y: 0
+        width: 888.8889
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 491d52e0fd7424a30800000000000000
+      internalID: 4197996826003362196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-reload-spriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 7992
+        y: 0
+        width: 888.8889
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3c4231e2cc83e120800000000000000
+      internalID: 2441950191594654783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-reload-spriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 8880
+        y: 0
+        width: 888.8889
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94ad99ca2de9c3110800000000000000
+      internalID: 1242042224923499081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-reload-spriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 9768
+        y: 0
+        width: 888.8889
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe6fd0710bc4e17a0800000000000000
+      internalID: -6404597300889520401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-reload-spriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 10656
+        y: 0
+        width: 888.8889
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 486d2edd903f7a920800000000000000
+      internalID: 3001634900368610948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-reload-spriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 11544
+        y: 0
+        width: 888.8889
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc3186b8923d38130800000000000000
+      internalID: 3567927505193538508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-reload-spriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 12432
+        y: 0
+        width: 888.8889
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96c0b4af1f0770e80800000000000000
+      internalID: -8212471210898158487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-reload-spriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 13320
+        y: 0
+        width: 888.8889
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 403deb3d3423e1910800000000000000
+      internalID: 1809939367146214148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-reload-spriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 14208
+        y: 0
+        width: 888.8889
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 953ff50064ec33da0800000000000000
+      internalID: -5966198281286454439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-reload-spriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 15096
+        y: 0
+        width: 888.8889
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd7ae63f7812287b0800000000000000
+      internalID: -5223575750007937061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

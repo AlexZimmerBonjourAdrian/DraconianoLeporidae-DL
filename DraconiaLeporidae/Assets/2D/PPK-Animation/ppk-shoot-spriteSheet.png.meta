@@ -1,0 +1,576 @@
+fileFormatVersion: 2
+guid: ac0f7ed1d798bf04f89202502815852b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8781339702456509551
+    second: ppk-shoot-spriteSheet_0
+  - first:
+      213: -7657834791724923918
+    second: ppk-shoot-spriteSheet_1
+  - first:
+      213: 3651374157086576592
+    second: ppk-shoot-spriteSheet_2
+  - first:
+      213: 1155492031264338460
+    second: ppk-shoot-spriteSheet_3
+  - first:
+      213: -739402413205769333
+    second: ppk-shoot-spriteSheet_4
+  - first:
+      213: -2136438454624500834
+    second: ppk-shoot-spriteSheet_5
+  - first:
+      213: -4867410058107972317
+    second: ppk-shoot-spriteSheet_6
+  - first:
+      213: -8507873743686219696
+    second: ppk-shoot-spriteSheet_7
+  - first:
+      213: 6530483396459525359
+    second: ppk-shoot-spriteSheet_8
+  - first:
+      213: -8105980201725380403
+    second: ppk-shoot-spriteSheet_9
+  - first:
+      213: 6590186572323165642
+    second: ppk-shoot-spriteSheet_10
+  - first:
+      213: -5786978970830403447
+    second: ppk-shoot-spriteSheet_11
+  - first:
+      213: 5493990665591568257
+    second: ppk-shoot-spriteSheet_12
+  - first:
+      213: -7598941508634751386
+    second: ppk-shoot-spriteSheet_13
+  - first:
+      213: 8922607508535661353
+    second: ppk-shoot-spriteSheet_14
+  - first:
+      213: 7026657854045624830
+    second: ppk-shoot-spriteSheet_15
+  - first:
+      213: 3340358866322568402
+    second: ppk-shoot-spriteSheet_16
+  - first:
+      213: -881640340030196134
+    second: ppk-shoot-spriteSheet_17
+  - first:
+      213: -3936934182550562506
+    second: ppk-shoot-spriteSheet_18
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ppk-shoot-spriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 842.1053
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6464f01fe59dd970800000000000000
+      internalID: 8781339702456509551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-shoot-spriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 0
+        width: 842.1053
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f3cb9274d7e9b590800000000000000
+      internalID: -7657834791724923918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-shoot-spriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 1684
+        y: 0
+        width: 842.1053
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dfcf2733794ca230800000000000000
+      internalID: 3651374157086576592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-shoot-spriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 2526
+        y: 0
+        width: 842.1053
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c123e4061e1290010800000000000000
+      internalID: 1155492031264338460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-shoot-spriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 3368
+        y: 0
+        width: 842.1053
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b83bdc63c6d1db5f0800000000000000
+      internalID: -739402413205769333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-shoot-spriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 4210
+        y: 0
+        width: 842.1053
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e934f9b7b88d952e0800000000000000
+      internalID: -2136438454624500834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-shoot-spriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 5052
+        y: 0
+        width: 842.1053
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3259f4e375c737cb0800000000000000
+      internalID: -4867410058107972317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-shoot-spriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 5894
+        y: 0
+        width: 842.1053
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 058c5b128e5fde980800000000000000
+      internalID: -8507873743686219696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-shoot-spriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 6736
+        y: 0
+        width: 842.1053
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe47e819c00f0aa50800000000000000
+      internalID: 6530483396459525359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-shoot-spriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 7578
+        y: 0
+        width: 842.1053
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc83fcf24f5c18f80800000000000000
+      internalID: -8105980201725380403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-shoot-spriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 8420
+        y: 0
+        width: 842.1053
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac51fde65cb057b50800000000000000
+      internalID: 6590186572323165642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-shoot-spriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 9262
+        y: 0
+        width: 842.1053
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9888ff8694580bfa0800000000000000
+      internalID: -5786978970830403447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-shoot-spriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 10104
+        y: 0
+        width: 842.1053
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 187b5e5e6639e3c40800000000000000
+      internalID: 5493990665591568257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-shoot-spriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 10946
+        y: 0
+        width: 842.1053
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66ecad475f22b8690800000000000000
+      internalID: -7598941508634751386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-shoot-spriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 11788
+        y: 0
+        width: 842.1053
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9235088414873db70800000000000000
+      internalID: 8922607508535661353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-shoot-spriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 12630
+        y: 0
+        width: 842.1053
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef91994e614b38160800000000000000
+      internalID: 7026657854045624830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-shoot-spriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 13472
+        y: 0
+        width: 842.1053
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d4bb71e0b65b5e20800000000000000
+      internalID: 3340358866322568402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-shoot-spriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 14314
+        y: 0
+        width: 842.1053
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5678d828c8c3c3f0800000000000000
+      internalID: -881640340030196134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-shoot-spriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 15156
+        y: 0
+        width: 842.1053
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6391bf048333d59c0800000000000000
+      internalID: -3936934182550562506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
