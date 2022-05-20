@@ -92,7 +92,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9119801821592770968}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -110,8 +110,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e773f9e627dbc149a1927bfcd10b761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Eyes: {fileID: 0}
-  ISee: {fileID: 0}
+  Eyes: {fileID: 9119801823071182789}
+  agent: {fileID: 0}
+  player: {fileID: 0}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 128
+  WhatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 64
+  walkPoint: {x: 0, y: 0, z: 0}
+  walkPointRange: 120
+  timeBetweenAttacks: 0.5
+  sightRange: 20
+  attackRange: 0
+  playerInSightRange: 0
+  playerInAttackRange: 0
+  projectile: {fileID: 0}
+  Health: 120
+  ISee: {fileID: 9119801822756127336}
 --- !u!1 &9119801822756127336
 GameObject:
   m_ObjectHideFlags: 0

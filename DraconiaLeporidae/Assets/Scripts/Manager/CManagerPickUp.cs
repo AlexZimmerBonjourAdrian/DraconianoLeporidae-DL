@@ -5,7 +5,10 @@ using UnityEngine;
 public class CManagerPickUp : MonoBehaviour
 {
 
+    public List<Transform> transforms;
+    [SerializeField] private List<GameObject> _WeaponAsset;
 
+    [SerializeField] private List<CWeaponPickUp> _PickUpList;
     public static CManagerPickUp Inst
     {
         get
@@ -33,14 +36,26 @@ public class CManagerPickUp : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+  
     // Update is called once per frame
     void Update()
     {
-        
+        //for (int i = _PickUpList.Count - 1; i >= 0; i--)
+        //{
+        //    if (_PickUpList[i] == null)
+        //        _PickUpList.RemoveAt(i);
+        //}
     }
+
+    public void SpawnWeapon(Vector3 post, GameObject _AssetPickUp)
+    {
+
+        GameObject obj = (GameObject)Instantiate(_AssetPickUp, post, Quaternion.identity);
+
+        CWeaponPickUp newWeapon = obj.GetComponent<CWeaponPickUp>();
+        
+        _PickUpList.Add(newWeapon);
+
+    }
+   
 }
