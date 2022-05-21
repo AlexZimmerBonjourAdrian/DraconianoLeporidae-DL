@@ -167,8 +167,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e62f8563f26b640a43abbec44a35ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapons: []
-  SwitchDelay: 1
+  _allWeaponAssets: []
+  _tranformSlot:
+  - {fileID: 0}
+  - {fileID: 0}
+  _trasnformWeapon: {fileID: 0}
 --- !u!4 &212156897 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}

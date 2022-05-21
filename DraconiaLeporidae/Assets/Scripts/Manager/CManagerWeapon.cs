@@ -8,12 +8,17 @@ namespace DL
     {
 
 
+       //Crear una estructura para agregar los datos de las armas 
+        //private struct Weapon
+        //{
+            
+        //}
         private GameObject[] _allWeapon = new GameObject[1];
         [SerializeField] private List<GameObject> _allWeaponAssets;
         private List<GameObject> weapons = new List<GameObject>();
         private GameObject[] auto_spawn_weapon = new GameObject[1];
         private List<CPPK> _ListHaveWeapon = new List<CPPK>();
-        [SerializeField]private Transform[] _tranformSlot = new Transform[2]; 
+        [SerializeField]private Transform[] _tranformSlot = new Transform[2];
         //[SerializeField] private GameObject[] weapons;
         //[SerializeField] private float SwitchDelay = 1f;
 
@@ -38,18 +43,37 @@ namespace DL
         }
         public void Update()
         {
-          
+           for(int i = weapons.Count -1; i>= 0; i--)
+        {
+            if (weapons[i] == null)
+                weapons.RemoveAt(i);
+        }
         }
         
         public void AddWeapon(GameObject Weapon)
         {
             if(weapons.Count <= 2)
             {
+                foreach(GameObject w in weapons)
+                {
+                    var ScrtiptWeapon = w.GetComponent<CArmed>();
+                    var ScriptableAddWeapon = Weapon.GetComponent<CArmed>();
+                    if( ScrtiptWeapon.GetWeaponName() == ScriptableAddWeapon.GetWeaponName())
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
                 Debug.Log("Entra en agregar el arma");
                 weapons.Add(Weapon);
+                CurrentWeapon = Spawn(gameObject.transform.position,Weapon);
                 SelectWeapon(0);
             }
         }
+        // Probar
         public GameObject SelectWeapon(int ind)
         {
             index = ind;
@@ -57,10 +81,8 @@ namespace DL
             for (int i= ind; i>=index-1;i++)
             {
                w  = weapons[i];
-                Spawn(gameObject.transform.position,w);
+                CurrentWeapon = w;
                 return w;
-                
-             
             }
 
             return null;
@@ -70,32 +92,44 @@ namespace DL
         {
             if(kc.digit1Key.isPressed)
             {
-                SelectWeapon(0);
+               CurrentWeapon = SelectWeapon(0);
+                
             }
             else if(kc.digit2Key.isPressed)
             {
-                SelectWeapon(1);
+                CurrentWeapon = SelectWeapon(1);
             }
         }
 
-        public void Spawn(Vector3 post, GameObject _Weapon)
+        public GameObject Spawn(Vector3 post, GameObject _Weapon)
         {
             GameObject obj = (GameObject)Instantiate(_Weapon, post, Quaternion.identity);
            
             obj.transform.parent = gameObject.transform;
             obj.transform.localEulerAngles= Vector3.zero;
             obj.transform.localPosition = new Vector3(0f, -0.131f, 0.122f);
-            // Vector3 localScale = obj.transform.localScale;
-            //localScale.x * =Rot
             CPPK newWeapon = obj.GetComponent<CPPK>();
-            //newBullet.addVel(vel);
             _ListHaveWeapon.Add(newWeapon);
-        }
 
-        //private void DropWeapon()
-        //{
-        //  if()
-        //}
+            return obj;
+        }
+        //Probar
+        private void DropWeapon()
+        {
+            if(kc.gKey.isPressed)
+            {
+                //Todo:Dropea el arma, probar
+                weapons.Remove(CurrentWeapon);
+                Destroy(CurrentWeapon);
+            }
+        }
+        
+        private void Equipped()
+        {
+
+        }
+        
+        
 
 
         //public static CManagerWeapon Inst

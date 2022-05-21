@@ -5,12 +5,14 @@ using UnityEngine.InputSystem;
 
 public class CPPK : CArmed
 {
-
+    
     private weapon_Input _input;
     private Animator _anim;
     private Keyboard kb = Keyboard.current;
     private Mouse Ms = Mouse.current;
     private bool isCrosshair = false;
+
+
     private void Start()
     {
        _input = GetComponent<weapon_Input>();
@@ -73,6 +75,21 @@ public class CPPK : CArmed
         //    Debug.Log("Entro Aqui");
         //    _anim.SetBool("IsShooting",true);
         //}
+    }
+
+    public override void Shoot()
+    {
+        base.Shoot();
+    }
+
+    public override void Add_ammo()
+    {
+        base.Add_ammo();
+    }
+
+    public override void Reload()
+    {
+        base.Reload();
     }
 }
 

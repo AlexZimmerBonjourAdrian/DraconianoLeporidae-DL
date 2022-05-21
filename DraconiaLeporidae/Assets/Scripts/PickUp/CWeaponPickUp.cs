@@ -13,7 +13,7 @@ public class CWeaponPickUp : MonoBehaviour/* IInteract<GameObject>*/
     //public Transform player, gunContainer, fpsCam;
    [SerializeField] private GameObject _weapon;
 
-    public BoxCollider box;
+    //public BoxCollider box;
 
     //public float pickUpRange;
     //public float dropForwardForce, dropUpForce;
@@ -24,7 +24,7 @@ public class CWeaponPickUp : MonoBehaviour/* IInteract<GameObject>*/
     public void Start()
     {
         ManagerWeapon = FindObjectOfType<CManagerWeapon>();
-        box = GetComponent<BoxCollider>();
+        //box = GetComponent<BoxCollider>();
         Debug.Log(ManagerWeapon);
     }
     private void Update()
