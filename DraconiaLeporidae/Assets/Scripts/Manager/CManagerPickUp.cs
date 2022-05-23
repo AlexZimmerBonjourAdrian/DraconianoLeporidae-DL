@@ -6,9 +6,9 @@ public class CManagerPickUp : MonoBehaviour
 {
 
     public List<Transform> transforms;
-    [SerializeField] private List<GameObject> _WeaponAsset;
+    private List<GameObject> _WeaponAsset;
 
-    [SerializeField] private List<CWeaponPickUp> _PickUpList;
+     private List<CWeaponPickUp> _PickUpList;
     public static CManagerPickUp Inst
     {
         get
@@ -45,6 +45,7 @@ public class CManagerPickUp : MonoBehaviour
         //    if (_PickUpList[i] == null)
         //        _PickUpList.RemoveAt(i);
         //}
+
     }
 
     public void SpawnWeapon(Vector3 post, GameObject _AssetPickUp)

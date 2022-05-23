@@ -131,7 +131,10 @@ namespace DL
         
         
 
-
+        public GameObject GetCurrentWeapon()
+        {
+            return CurrentWeapon;
+        }
         //public static CManagerWeapon Inst
         //{
         //    get
