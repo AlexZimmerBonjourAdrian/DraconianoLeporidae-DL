@@ -35,6 +35,12 @@ TextureImporter:
   - first:
       213: 7365468930146463040
     second: ppk-Crossair-spritesheet_10
+  - first:
+      213: -8770591636282351779
+    second: ppk-Crossair-spritesheet_11
+  - first:
+      213: 4294363250118336659
+    second: ppk-Crossair-spritesheet_12
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -98,7 +104,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -110,7 +116,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 8192
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -122,7 +128,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 8192
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -139,10 +145,10 @@ TextureImporter:
       name: ppk-Crossair-spritesheet_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 695
         y: 0
-        width: 1333.3334
-        height: 750
+        width: 639
+        height: 433
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,10 +166,10 @@ TextureImporter:
       name: ppk-Crossair-spritesheet_1
       rect:
         serializedVersion: 2
-        x: 1333
+        x: 2029
         y: 0
-        width: 1333.3334
-        height: 750
+        width: 638
+        height: 435
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,10 +187,10 @@ TextureImporter:
       name: ppk-Crossair-spritesheet_2
       rect:
         serializedVersion: 2
-        x: 2666
+        x: 3319
         y: 0
-        width: 1333.3334
-        height: 750
+        width: 387
+        height: 477
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,10 +208,10 @@ TextureImporter:
       name: ppk-Crossair-spritesheet_3
       rect:
         serializedVersion: 2
-        x: 3999
+        x: 4635
         y: 0
-        width: 1333.3334
-        height: 750
+        width: 346
+        height: 533
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,10 +229,10 @@ TextureImporter:
       name: ppk-Crossair-spritesheet_4
       rect:
         serializedVersion: 2
-        x: 5332
+        x: 5963
         y: 0
-        width: 1333.3334
-        height: 750
+        width: 591
+        height: 474
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,10 +250,10 @@ TextureImporter:
       name: ppk-Crossair-spritesheet_5
       rect:
         serializedVersion: 2
-        x: 6665
+        x: 7297
         y: 0
-        width: 1333.3334
-        height: 750
+        width: 579
+        height: 476
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,10 +271,10 @@ TextureImporter:
       name: ppk-Crossair-spritesheet_6
       rect:
         serializedVersion: 2
-        x: 7998
+        x: 11007
         y: 0
-        width: 1333.3334
-        height: 750
+        width: 877
+        height: 427
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -286,10 +292,10 @@ TextureImporter:
       name: ppk-Crossair-spritesheet_7
       rect:
         serializedVersion: 2
-        x: 9331
+        x: 12227
         y: 0
-        width: 1333.3334
-        height: 750
+        width: 953
+        height: 428
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -307,10 +313,10 @@ TextureImporter:
       name: ppk-Crossair-spritesheet_8
       rect:
         serializedVersion: 2
-        x: 10664
-        y: 0
-        width: 1333.3334
-        height: 750
+        x: 12708
+        y: 426
+        width: 5
+        height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -328,10 +334,10 @@ TextureImporter:
       name: ppk-Crossair-spritesheet_9
       rect:
         serializedVersion: 2
-        x: 11997
-        y: 0
-        width: 1333.3334
-        height: 750
+        x: 3706
+        y: 15
+        width: 6
+        height: 4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -349,10 +355,10 @@ TextureImporter:
       name: ppk-Crossair-spritesheet_10
       rect:
         serializedVersion: 2
-        x: 13330
+        x: 8440
         y: 0
-        width: 1333.3334
-        height: 750
+        width: 688
+        height: 407
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -362,6 +368,48 @@ TextureImporter:
       bones: []
       spriteID: 04d6e81d7f6673660800000000000000
       internalID: 7365468930146463040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-Crossair-spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 9759
+        y: 0
+        width: 681
+        height: 407
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5fd0691069984680800000000000000
+      internalID: -8770591636282351779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ppk-Crossair-spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 13575
+        y: 0
+        width: 974
+        height: 424
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 390abcb9f94a89b30800000000000000
+      internalID: 4294363250118336659
       vertices: []
       indices: 
       edges: []

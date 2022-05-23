@@ -117,6 +117,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72a27c1347cd3a74f9847c6efdde931d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: a1db76d2d37d68742aca7ff987bcb52d, type: 2}
+  weapon_name: Name
+  weapon_description: 
+  equip_speed: 1
+  unequip_speed: 1
+  reload_speed: 1
+  accuarcy: 1
+  type_Weapon: Weapon
+  recoil: 1
+  offset: 1
+  multidisparo: 0
+  exparsion: 1
+  ammo_in_mag: 15
+  extra_ammo: 30
+  mag_size: 0
+  damage: 10
+  fire_rate: 1
 --- !u!114 &7584655278904760912
 MonoBehaviour:
   m_ObjectHideFlags: 0
