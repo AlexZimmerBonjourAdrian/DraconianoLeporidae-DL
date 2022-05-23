@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d27d8b2ca7966ef4c9b361fcf9b3f2ab, type: 3}
   m_Name: M4A1
   m_EditorClassIdentifier: 
-  weapon_name: Name
-  weapon_description: 
+  weapon_name: M4A1
+  weapon_description: Precisa, y totalmente mortal
   equip_speed: 1
   unequip_speed: 1
-  reload_speed: 1
-  accuarcy: 1
-  type_Weapon: Weapon
-  recoil: 1
-  offset: 1
-  multidisparo: 0
-  exparsion: 1
-  ammo_in_mag: 15
-  extra_ammo: 30
-  mag_size: 0
-  damage: 10
-  fire_rate: 1
+  reload_speed: 0.6
+  accuarcy: 0.96
+  type_Weapon: Carabina
+  recoil: 0.3
+  offset: 0.2
+  multidisparo: 1
+  exparsion: 0
+  ammo_in_mag: 30
+  extra_ammo: 320
+  mag_size: 30
+  damage: 40
+  fire_rate: 1.2

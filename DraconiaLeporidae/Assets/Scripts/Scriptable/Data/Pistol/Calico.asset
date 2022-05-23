@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d27d8b2ca7966ef4c9b361fcf9b3f2ab, type: 3}
   m_Name: Calico
   m_EditorClassIdentifier: 
-  weapon_name: Name
-  weapon_description: 
-  equip_speed: 1
-  unequip_speed: 1
-  reload_speed: 1
-  accuarcy: 1
-  type_Weapon: Weapon
+  weapon_name: Calico
+  weapon_description: 'Una pistola ametralladora creada por una '
+  equip_speed: 0.4
+  unequip_speed: 0.4
+  reload_speed: 1.5
+  accuarcy: 0.5
+  type_Weapon: Pistol
   recoil: 1
   offset: 1
   multidisparo: 0
-  exparsion: 1
-  ammo_in_mag: 15
-  extra_ammo: 30
-  mag_size: 0
-  damage: 10
-  fire_rate: 1
+  exparsion: 0.4
+  ammo_in_mag: 100
+  extra_ammo: 600
+  mag_size: 100
+  damage: 30
+  fire_rate: 0.3

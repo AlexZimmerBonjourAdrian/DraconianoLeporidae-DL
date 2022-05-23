@@ -23,6 +23,7 @@ public class CWeaponPickUp : MonoBehaviour/* IInteract<GameObject>*/
 
     public void Start()
     {
+
         ManagerWeapon = FindObjectOfType<CManagerWeapon>();
         //box = GetComponent<BoxCollider>();
         Debug.Log(ManagerWeapon);

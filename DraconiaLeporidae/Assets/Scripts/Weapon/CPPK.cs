@@ -10,14 +10,13 @@ public class CPPK : CArmed
     private Animator _anim;
     private Keyboard kb = Keyboard.current;
     private Mouse Ms = Mouse.current;
-    private bool isCrosshair = false;
 
 
-    private void Start()
+    public void Start()
     {
+        base.Start();
        _input = GetComponent<weapon_Input>();
         _anim = GetComponent<Animator>();
-       
     }
 
      void Update()
@@ -28,47 +27,49 @@ public class CPPK : CArmed
     private void Controller()
     {
 
-        if(Ms.leftButton.isPressed && !isCrosshair)
+        if(Ms.leftButton.isPressed && !isCrossing)
         {
                 Debug.Log("Entro Aqui");
-            _anim.SetBool("IsShooting", true);
+            isShooting = true;
+            _anim.SetBool("IsShooting", isShooting);
+           
         }
         else if(this._anim.GetCurrentAnimatorStateInfo(0).IsName("Shoot"))
         {
-            _anim.SetBool("IsShooting", false);
+            isShooting = false;
+            _anim.SetBool("IsShooting", isShooting);
         }
-        if(Ms.rightButton.isPressed && !isCrosshair)
+        if(Ms.rightButton.isPressed)
         {
             Debug.Log("Entra Aqui");
-            isCrosshair = true;
+            isCrossing = true;
             _anim.SetBool("IsCrossair", true);
         }
-
-
 
         else if(!Ms.rightButton.isPressed)
         {
             //_anim.playbackTime("Crosshair");
-            _anim.SetBool("IsCrossair", false);
-            isCrosshair = false;
+            _anim.StartPlayback();
+            isCrossing = false;
+            _anim.SetBool("IsCrossair", isCrossing);  
         }
         
-        else if (Ms.leftButton.isPressed)
+        else if (Ms.leftButton.isPressed && isCrossing)
         {
-            _anim.SetBool("IsShoting", true);
-
+            isShooting = true;
+            _anim.SetBool("IsShoting", isShooting);
         }
 
         if (kb.rKey.isPressed)
         {
-            _anim.SetBool("CanReload", true);
+            isReload = true;
+            _anim.SetBool("CanReload", isReload);
         }
         else if(!kb.rKey.isPressed)
         {
-            _anim.SetBool("CanReload", false);
+            isReload = false;
+            _anim.SetBool("CanReload", isReload);
         }
-
-        
 
         //if( == true)
         //{
@@ -82,14 +83,19 @@ public class CPPK : CArmed
         base.Shoot();
     }
 
-    public override void Add_ammo()
+    public override void Add_ammo(DataPickUp PickUp)
     {
-        base.Add_ammo();
+        base.Add_ammo(PickUp);
     }
 
     public override void Reload()
     {
         base.Reload();
+    }
+
+    public override void LoadInfo()
+    {
+        base.LoadInfo();
     }
 }
 
