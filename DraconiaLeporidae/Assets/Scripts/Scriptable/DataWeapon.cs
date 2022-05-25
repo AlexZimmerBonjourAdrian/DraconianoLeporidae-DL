@@ -22,6 +22,7 @@ public class DataWeapon : ScriptableObject
     public int mag_size = 0;
     public int damage = 10;
     public float fire_rate = 1.0f;
+    public float distance = 100.0f;
 
     public void UpdateMagSize()
     {

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class CArmed : MonoBehaviour, IInteract
 {
+    private weapon weapon_controller;
     public DataWeapon data;
     [SerializeField] public string weapon_name = "Name";
     [SerializeField] public string weapon_description;
@@ -22,12 +23,48 @@ public class CArmed : MonoBehaviour, IInteract
     [SerializeField] public int damage = 10;
     [SerializeField] public float fire_rate = 1.0f;
     // Start is called before the first frame update
-    protected bool isShooting = false;
-    protected bool isReload = false;
-    protected bool isCrossing = false;
-
+    [SerializeField] protected bool isShooting = false;
+    [SerializeField] protected bool isReload = false;
+    [SerializeField] protected bool isCrossing = false;
+    [SerializeField] protected LayerMask collision;
+    [SerializeField] protected float distance = 100f;
     private Keyboard kb = Keyboard.current;
     private Mouse ms = Mouse.current;
+    protected InputAction shoot;
+    protected InputAction reload;
+    protected InputAction crosshair;
+    protected InputAction drop;
+    private void Awake()
+    {
+        weapon_controller = new weapon();
+    }
+
+    protected void OnEnable()
+    {
+        weapon_controller.Enable();
+        shoot = weapon_controller.Weapon.Shoot;
+        reload = weapon_controller.Weapon.Reload;
+        crosshair = weapon_controller.Weapon.Crosshair;
+        drop = weapon_controller.Weapon.Drop;
+        
+        shoot.Enable();
+        reload.Enable();
+        crosshair.Enable();
+        drop.Enable();
+
+        
+    }
+
+    protected void OnDisable()
+    {
+        weapon_controller.Disable();
+        shoot.Disable();
+        reload.Disable();
+        crosshair.Disable();
+        drop.Disable();
+
+        //shoot.performed += Shoot;
+    }
 
     public void Start()
     {
@@ -43,53 +80,91 @@ public class CArmed : MonoBehaviour, IInteract
         return type_Weapon;
     }
 
+    public virtual int GetWeaponDamage()
+    {
+        return damage;
+    }
+
     public virtual int GetAmmo_in_Mag()
     {
         return ammo_in_mag;
     }
+
+    public virtual bool GetIsShooting()
+    {
+        return isShooting;
+    }
+
+    public virtual bool GetIsReload()
+    {
+        return isReload;
+    }
+
+    public virtual bool GetIsCrossing()
+    {
+        return isCrossing;
+    }
     public virtual void Shoot()
     {
+        DebugFunction();
+        DebugLog();
        if(type_Weapon == "Pistol" || type_Weapon == "Shootgun"|| type_Weapon == "Rifle" )
-        { 
-            if(Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            if (ms.leftButton.wasPressedThisFrame)
             {
                 if (ammo_in_mag >= 0)
-                { 
-                    ammo_in_mag --;
-                    extra_ammo --;
+                {
+                    isShooting = true;
+                    ammo_in_mag--;
+                    //data.ammo_in_mag --;
+                    extra_ammo--;
+                    //data.extra_ammo --;
                 }
+                isShooting = false;
             }
         }
-       else if( type_Weapon == "Carabina")
+        else if( type_Weapon == "Carabine")
         {
-           if(Input.GetKeyDown(KeyCode.Mouse0))
+           if(ms.leftButton.wasPressedThisFrame)
             { 
                 if (ammo_in_mag >= 0)
                 {
-                    ammo_in_mag -= 3;
-                    extra_ammo -= 3;
+                    isShooting = true;
+                    for (int i = 3; i >= 0; i--)
+                    {
+                    ammo_in_mag -= 1;
+                    //data.ammo_in_mag -= 1;
+                    extra_ammo -= 1;
+                    //data.extra_ammo -= 1;
+                    }
+                   
                 }
                 else if(ammo_in_mag < 0)
                 {
                     ammo_in_mag = 0;
+                    ammo_in_mag = 0;
                 }
+                isShooting = false;
             }
         }
        else
         {
-            if (Input.GetKey(KeyCode.Mouse0))
+            if (ms.leftButton.isPressed)
             {
                 if(ammo_in_mag >= 0)
                 {
                     ammo_in_mag -= 1;
+                    //data.ammo_in_mag -= 1;
                     extra_ammo -= 1;
+                    //data.extra_ammo -= 1;
                 }
             }
+            isShooting = false;
         }
     }
     public virtual void Reload()
     {
-       if(Input.GetKeyDown(KeyCode.R))
+       if(kb.rKey.wasPressedThisFrame)
         {
             if(extra_ammo >= 0)
             {
@@ -105,8 +180,10 @@ public class CArmed : MonoBehaviour, IInteract
 
     public void DebugLog()
     {
+        Debug.Log(weapon_name);
+        //Debug.Log(type_Weapon);
         Debug.Log(damage);
-        Debug.Log("Mag Size" + mag_size);
+        Debug.Log("Mag Size: " + ammo_in_mag);
     }
 
     public void OnInteract()
@@ -131,5 +208,21 @@ public class CArmed : MonoBehaviour, IInteract
         mag_size = data.mag_size;
         damage = data.damage;
         fire_rate = data.fire_rate;
+        distance = data.distance;
+        
+    }
+    public virtual void DebugFunction()
+    {
+        Debug.Log("IsShoting: " + isShooting);
+
+        //Debug.Log("IsReload: " + isReload);
+
+        //Debug.Log("IsCrossing: " + isCrossing);
+
+    }
+
+    protected virtual void TipeWeapon()
+    {
+        
     }
 }

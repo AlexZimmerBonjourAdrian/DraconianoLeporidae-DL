@@ -23,13 +23,13 @@ public class CControllerPickup : MonoBehaviour
     }
     private void TestController()
     {
-        if(kb.qKey.IsPressed() == true)
+        if(kb.qKey.wasPressedThisFrame)
         {
-            CManagerPickUp.Inst.SpawnWeapon(_SpawnPosition.position, _AssetPPk);
+            CManagerPickUp.Inst.SpawnWeapon(transform.position, _AssetPPk);
         }
-        if(kb.eKey.isPressed)
-        {
-            CManagerPickUp.Inst.SpawnWeapon(_SpawnPosition.position, _AssetMP5K);
-        }
+        //if(kb.eKey.wasPressedThisFrame)
+        //{
+        //    CManagerPickUp.Inst.SpawnWeapon(transform.position, _AssetMP5K);
+        //}
     }
 }

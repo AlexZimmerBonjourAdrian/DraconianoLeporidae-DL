@@ -4,46 +4,10 @@ using UnityEngine;
 using UnityEngine.AI;
 public class CMafioso : CEnemy
 {
-    [SerializeField]
-    private Transform Eyes;
-
-    public NavMeshAgent agent;
     
-    public Transform player;
-
-    public LayerMask whatIsGround, WhatIsPlayer;
-
-    //Patroling
-    public Vector3 walkPoint;
-    bool walkPointSet;
-    public float walkPointRange;
-
-    //Attacking
-    public float timeBetweenAttacks;
-    bool alreadyAttaacked;
-
-    //States
-    public float sightRange, attackRange;
-    public bool playerInSightRange, playerInAttackRange;
-    public GameObject projectile;
-
-    public float Health;
-
-    private Collision Detection;
-    [SerializeField]
-    private GameObject ISee; 
-    private enum states {
-        STATE_STAND = 0,
-        STATE_PATRULLA=1,
-        STATE_FOLLOW=2,
-        STATE_SHOOT_PLAYER=3,
-        STATE_DEAD=4,
-        STATE_SCARED = 5,
-
-    }
 
     
-    private int state = (int)states.STATE_STAND;
+     protected int state = (int)states.STATE_STAND;
     //private Ray= new Ray;
 
     private void Awake()
@@ -53,39 +17,22 @@ public class CMafioso : CEnemy
     }
 
 
-    private void Patroling()
+    protected override void Patroling()
     {
 
-        if (walkPointSet) SearchWalkPoint();
-        if (walkPointSet)
-            agent.SetDestination(walkPoint);
-
-        Vector3 distanceToWalkPoint = transform.position - walkPoint;
-
-        if(distanceToWalkPoint.magnitude < 1f)
-        {
-            walkPointSet = false;
-        }
+        base.Patroling();
     }
 
-    private void SearchWalkPoint()
+    protected override void SearchWalkPoint()
     {
-        float randomZ = Random.Range(-walkPointRange, walkPointRange);
-        float randomX = Random.Range(-walkPointRange, walkPointRange);
-
-        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
-        
-        if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
-        {
-            walkPointSet = true;
-        }
+        base.SearchWalkPoint();
     }
-    private void ChasePlayer()
+    protected override void ChasePlayer()
     {
-        agent.SetDestination(player.position);
+        base.ChasePlayer();
 
     }
-    private void AttackPlayer()
+    protected override void AttackPlayer()
     {
         //Make sure enemu doesn't move
         agent.SetDestination(transform.position);
@@ -104,21 +51,19 @@ public class CMafioso : CEnemy
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
     }
-    private void ResetAttack()
+    protected override void ResetAttack()
     {
-        alreadyAttaacked = false;
+        base.ResetAttack();
     }
 
-    public void TakeDamage(int damage)
+    public override void TakeDamage(int damage)
     {
-        Health -= damage;
-
-        if (Health <= 0) Invoke(nameof(DestroyEnemy), .5f);
+        base.TakeDamage(damage);
        
     }
-    private void DestroyEnemy()
+    protected override void DestroyEnemy()
     {
-        Destroy(gameObject);
+        base.DestroyEnemy();
     }
     private void Start()
     {
@@ -173,7 +118,7 @@ public class CMafioso : CEnemy
     //{
     //    return 0;
     //}
-    public int SetState(int astate)
+    public override int SetState(int astate)
     {
         state = astate;
         return state;
@@ -193,5 +138,10 @@ public class CMafioso : CEnemy
         Gizmos.DrawWireSphere(transform.position, attackRange);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange);
+    }
+
+    public override void Dead()
+    {
+        SetState((int)states.STATE_DEAD);
     }
 }

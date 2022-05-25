@@ -26,5 +26,5 @@ MonoBehaviour:
   ammo_in_mag: 15
   extra_ammo: 30
   mag_size: 60
-  damage: 20
+  damage: 10
   fire_rate: 1.5

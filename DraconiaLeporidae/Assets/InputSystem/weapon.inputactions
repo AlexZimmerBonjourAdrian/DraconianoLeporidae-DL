@@ -1,5 +1,5 @@
 {
-    "name": "weaponInput",
+    "name": "weapon",
     "maps": [
         {
             "name": "Weapon",
@@ -11,7 +11,7 @@
                     "id": "6686add1-cf7a-4de6-be5a-09a035361b11",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press",
                     "initialStateCheck": false
                 },
                 {
@@ -20,7 +20,7 @@
                     "id": "74fd0fcb-fdba-4b2b-913f-c86178c50668",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press(behavior=2)",
                     "initialStateCheck": false
                 },
                 {
@@ -29,7 +29,7 @@
                     "id": "e93cc6c3-d9aa-4f0a-aaec-110f69c73a1f",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press",
                     "initialStateCheck": false
                 },
                 {
@@ -38,7 +38,7 @@
                     "id": "44c7c0bb-1a9d-4802-9aee-3e33b447bd3a",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press(behavior=2)",
                     "initialStateCheck": false
                 }
             ],

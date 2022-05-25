@@ -67,7 +67,7 @@ namespace DL
                         continue;
                     }
                 }
-                Debug.Log("Entra en agregar el arma");
+                //Debug.Log("Entra en agregar el arma");
                 weapons.Add(Weapon);
                 CurrentWeapon = Spawn(gameObject.transform.position,Weapon);
                 SelectWeapon(0);

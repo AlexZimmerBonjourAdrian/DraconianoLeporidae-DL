@@ -11,6 +11,7 @@ public class CPPK : CArmed
     private Keyboard kb = Keyboard.current;
     private Mouse Ms = Mouse.current;
 
+    public float range = 100f;
 
     public void Start()
     {
@@ -26,46 +27,54 @@ public class CPPK : CArmed
 
     private void Controller()
     {
-
-        if(Ms.leftButton.isPressed && !isCrossing)
+        
+        //Debug.DrawRay(transform.position, -transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
+        if (Ms.leftButton.wasPressedThisFrame)
         {
-                Debug.Log("Entro Aqui");
+            ShootRay();
+            Debug.Log("Entro Aqui");
             isShooting = true;
+            Shoot();
             _anim.SetBool("IsShooting", isShooting);
            
         }
         else if(this._anim.GetCurrentAnimatorStateInfo(0).IsName("Shoot"))
         {
             isShooting = false;
+            Shoot();
             _anim.SetBool("IsShooting", isShooting);
         }
         if(Ms.rightButton.isPressed)
-        {
+        {   
             Debug.Log("Entra Aqui");
             isCrossing = true;
-            _anim.SetBool("IsCrossair", true);
+            _anim.SetBool("IsCrossing", true);
+
+            if (Ms.leftButton.wasPressedThisFrame )
+            {
+                ShootRay();
+                isShooting = true;
+                Shoot();
+                _anim.SetBool("IsShooting", isShooting);
+            }
         }
 
-        else if(!Ms.rightButton.isPressed)
+        else if(Ms.rightButton.wasReleasedThisFrame)
         {
             //_anim.playbackTime("Crosshair");
             _anim.StartPlayback();
             isCrossing = false;
-            _anim.SetBool("IsCrossair", isCrossing);  
+            _anim.SetBool("IsCrossing", isCrossing);  
         }
         
-        else if (Ms.leftButton.isPressed && isCrossing)
-        {
-            isShooting = true;
-            _anim.SetBool("IsShoting", isShooting);
-        }
+        
 
-        if (kb.rKey.isPressed)
+        if (kb.rKey.wasPressedThisFrame)
         {
             isReload = true;
             _anim.SetBool("CanReload", isReload);
         }
-        else if(!kb.rKey.isPressed)
+        else if(!kb.rKey.wasReleasedThisFrame)
         {
             isReload = false;
             _anim.SetBool("CanReload", isReload);
@@ -96,6 +105,53 @@ public class CPPK : CArmed
     public override void LoadInfo()
     {
         base.LoadInfo();
+    }
+
+    public override string GetWeaponName()
+    {
+       return base.GetWeaponName();
+    }
+
+    public override string GetWeaponType()
+    {
+        return GetWeaponType();
+    }
+
+    public override int GetWeaponDamage()
+    {
+        return GetWeaponDamage();
+    }
+
+    public override int GetAmmo_in_Mag()
+    {
+        return GetAmmo_in_Mag();
+    }
+
+    public override bool GetIsShooting()
+    {
+        return GetIsShooting();
+    }
+
+    public override bool GetIsReload()
+    {
+        return GetIsReload();
+    }
+
+    public override bool GetIsCrossing()
+    {
+        return GetIsCrossing();
+    }
+
+    public void ShootRay()
+    {
+        RaycastHit hit;
+        if(Physics.Raycast(transform.position, transform.forward, out hit, range))
+        {
+            if(hit.collider.tag == "Enemy")
+            {
+                hit.collider.GetComponent<CDebugWeapon>().TakeDamage(damage);
+            }
+        }
     }
 }
 

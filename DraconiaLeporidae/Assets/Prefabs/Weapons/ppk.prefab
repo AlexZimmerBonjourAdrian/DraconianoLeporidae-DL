@@ -118,13 +118,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: a1db76d2d37d68742aca7ff987bcb52d, type: 2}
-  weapon_name: Name
+  weapon_name: Ppk
   weapon_description: 
   equip_speed: 1
   unequip_speed: 1
   reload_speed: 1
   accuarcy: 1
-  type_Weapon: Weapon
+  type_Weapon: Pistol
   recoil: 1
   offset: 1
   multidisparo: 0
@@ -134,6 +134,9 @@ MonoBehaviour:
   mag_size: 0
   damage: 10
   fire_rate: 1
+  isShooting: 0
+  isReload: 0
+  isCrossing: 0
 --- !u!114 &7584655278904760912
 MonoBehaviour:
   m_ObjectHideFlags: 0
