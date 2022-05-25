@@ -13,17 +13,19 @@ namespace StarterAssets
 	{
 		[Header("Player")]
 		[Tooltip("Move speed of the character in m/s")]
-		public float MoveSpeed = 4.0f;
+		public float MoveSpeed = 12.0f;
 		[Tooltip("Sprint speed of the character in m/s")]
-		public float SprintSpeed = 12.0f;
+		public float SprintSpeed = 20.0f;
 		[Tooltip("Rotation speed of the character")]
-		public float RotationSpeed = 1.0f;
+		public float RotationSpeed = 4.0f;
 		[Tooltip("Acceleration and deceleration")]
 		public float SpeedChangeRate = 10.0f;
 		[Tooltip("Dash Speed")]
 		public float SpeedDash = 8.0f;
 		[Tooltip("Dash Speed")]
 		public float UpSpeed = 2.0f;
+		[Tooltip("Can climbing")]
+		public bool isClimbing = false;
 
 
 		[Space(10)]
@@ -77,10 +79,14 @@ namespace StarterAssets
 		private GameObject _mainCamera;
 
 		private const float _threshold = 0.01f;
-		
+		private Keyboard kb = Keyboard.current;
+		private Mouse ms = Mouse.current;
 		private bool IsCurrentDeviceMouse => _playerInput.currentControlScheme == "KeyboardMouse";
 
 		private bool IsInterior	= false;
+
+		
+
 		private void Awake()
 		{
 			// get a reference to our main camera
@@ -116,6 +122,17 @@ namespace StarterAssets
 			
 		}
 
+		public void Interiores()
+		{
+			MoveSpeed = 12.0f;
+			SprintSpeed = 20.0f;
+			SpeedDash = 8.0f;
+
+		}
+
+		public void Exterior()
+		{
+		}
 		private void LateUpdate()
 		{
 			CameraRotation();
@@ -149,22 +166,17 @@ namespace StarterAssets
 				transform.Rotate(Vector3.up * _rotationVelocity);
 			}
 		}
-
-
-		private void running()
-        {
-   //         // set target speed based on move speed, sprint speed and if sprint is pressed
-   //         float targetSpeed = _input.sprint ? _speedrunning : MoveSpeed;
-			
-			//if (_input.move == Vector2.zero) targetSpeed = 0.0f;
-		}
-
+		
 		private void Dash()
-        {
+		{
 			//float targetSpeed = _input.dash ? SpeedDash : MoveSpeed;
 
 			//float currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;
 			//float speedOffset = 0.1f;
+			//if (kb.ctrlKey.wasPressedThisFrame)
+			//{
+			//	transform.position = transform.position * SpeedDash * Time.deltaTime;
+			//}
 
 		}
 		private void Move()
@@ -212,6 +224,8 @@ namespace StarterAssets
 
 			// move the player
 			_controller.Move(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+
+			Dash();
 		}
 
 		private void JumpAndGravity()
@@ -280,5 +294,8 @@ namespace StarterAssets
 			// when selected, draw a gizmo in the position of, and matching radius of, the grounded collider
 			Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z), GroundedRadius);
 		}
+	
 	}
+
+	
 }
