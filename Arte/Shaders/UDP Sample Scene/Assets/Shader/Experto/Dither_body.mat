@@ -38,9 +38,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Dither_Camera_Range: 1
-    - _Dither_Size: 1
-    - _Max_Distance: 3
+    - _Dither_Camera_Range: 0.11
+    - _Dither_Size: 0.69
+    - _Max_Distance: 1.38
     - _Opocity: 1
     - _QueueControl: 0
     - _QueueOffset: 0

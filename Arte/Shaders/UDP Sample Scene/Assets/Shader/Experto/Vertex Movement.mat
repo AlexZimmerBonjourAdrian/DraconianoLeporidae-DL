@@ -55,5 +55,5 @@ Material:
     - _Speed_Rotation: 2
     m_Colors:
     - _Color: {r: 1, g: 0.9532508, b: 0, a: 0}
-    - _Rotation_Axis: {r: 0, g: 1, b: 0, a: 0}
+    - _Rotation_Axis: {r: 0, g: 5, b: 1, a: 0}
   m_BuildTextureStacks: []

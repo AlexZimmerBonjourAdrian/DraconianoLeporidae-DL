@@ -47,15 +47,15 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Heigth_Offset: 0.6
-    - _Movement_Speed: 0.5
-    - _Movement_strenght: 0.2
+    - _Heigth_Offset: 0.35
+    - _Movement_Speed: 8.99
+    - _Movement_strenght: -0.04
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Random_Offset: 1
-    - _Random_Value: 1
+    - _Random_Value: 10
     - _Speed_Rotation: 1
     m_Colors:
-    - _Color: {r: 1, g: 0.9532508, b: 0, a: 0}
-    - _Rotation_Axis: {r: 0, g: 1, b: 0, a: 0}
+    - _Color: {r: 1, g: 0.73281586, b: 0.4009434, a: 0}
+    - _Rotation_Axis: {r: 2, g: 8, b: 4, a: 0}
   m_BuildTextureStacks: []

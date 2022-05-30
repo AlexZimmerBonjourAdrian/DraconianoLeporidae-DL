@@ -38,16 +38,18 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Foam_offset: 0.1
+    - _Depth_Distance: 0.2
+    - _Depth_Strengrth: 0.825
+    - _Foam_offset: 0.301
     - _Opacity: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Waves: 0.3
-    - _size: 3
+    - _Waves: 0.49
+    - _size: 1
     m_Colors:
-    - _Color_Base: {r: 0, g: 0.6341486, b: 0.6698113, a: 0}
-    - _Color_main_foam: {r: 1, g: 1, b: 1, a: 0}
-    - _Color_secundary_foam: {r: 0.33962262, g: 0.15539338, b: 0.15539338, a: 0}
+    - _Color_Base: {r: 0.7843138, g: 0, b: 0.043137256, a: 0}
+    - _Color_main_foam: {r: 1, g: 0.55018294, b: 0.11792451, a: 0}
+    - _Color_secundary_foam: {r: 0.8679245, g: 0.55572075, b: 0.1514774, a: 0}
     - _Direction: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &999709319703287050
