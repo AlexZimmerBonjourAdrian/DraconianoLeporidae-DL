@@ -1,5 +1,0 @@
-sceneSetups:
-- path: Assets/ExtraTools/DirtyApartments/_scenes/demo_day.unity
-  isLoaded: 1
-  isActive: 1
-  isSubScene: 0

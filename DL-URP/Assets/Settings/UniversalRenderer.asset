@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugShaders:
     debugReplacementPS: {fileID: 4800000, guid: cf852408f2e174538bcd9b7fda1c5ae7, type: 3}
-  m_RendererFeatures: []
-  m_RendererFeatureMap: 
+  m_RendererFeatures:
+  - {fileID: 8582085226650113992}
+  - {fileID: 637774826893208294}
+  - {fileID: 5337838354324588866}
+  m_RendererFeatureMap: c8979b360bb11977e6eaa773d3d4d9084209f9c1b3cf134a
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -31,6 +34,7 @@ MonoBehaviour:
     coreBlitColorAndDepthPS: {fileID: 4800000, guid: d104b2fc1ca6445babb8e90b0758136b, type: 3}
     cameraMotionVector: {fileID: 4800000, guid: c56b7e0d4c7cb484e959caeeedae9bbf, type: 3}
     objectMotionVector: {fileID: 4800000, guid: 7b3ede40266cd49a395def176e1bc486, type: 3}
+  m_AssetVersion: 1
   m_OpaqueLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -50,3 +54,117 @@ MonoBehaviour:
   m_AccurateGbufferNormals: 0
   m_ClusteredRendering: 0
   m_TileSize: 32
+  m_IntermediateTextureMode: 1
+--- !u!114 &637774826893208294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f62c9c65cf3354c93be831c8bc075510, type: 3}
+  m_Name: ScreenSpaceAmbientOcclusion
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  m_Shader: {fileID: 4800000, guid: 0849e84e3d62649e8882e9d6f056a017, type: 3}
+  m_Settings:
+    Downsample: 0
+    AfterOpaque: 0
+    Source: 1
+    NormalSamples: 1
+    Intensity: 3
+    DirectLightingStrength: 0.946
+    Radius: 0.035
+    SampleCount: 9
+--- !u!114 &5337838354324588866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9cede398fae4c65390e7dca49ec6df0, type: 3}
+  m_Name: OilPaintingEffectURP
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    WhenToApply: 550
+    inputTexture: {fileID: 0}
+    renderToTexture: 0
+    outputTexture: {fileID: 0}
+    outputMipmap: 0
+    EffectFade: 0
+    PanFade: 0
+    SrcBlur: 0
+    SrcBright: 1
+    SrcColor: 1.5
+    SrcContrast: 1.5
+    BrushDetail: 0.1
+    BrushFill: 0.5
+    NumStrokes: 32768
+    Canvas: 0.4
+    ColorSpread: 0.5
+    FlickerFreq: 15
+    FlickerStrength: 0
+    LayerScale: 0.8
+    LightAng: 135
+    LightOffs: 60
+    PaintDiff: 0.15
+    PaintShiny: 0.5
+    PaintSpec: 0.15
+    StrokeAng: 0
+    StrokeBend: -1
+    StrokeContour: 1
+    StrokeDir: 0
+    ScreenFOV: 0
+    MultiStroke: 6
+    strokeSeed: 10
+    Vignette: 1
+    CanvasBg: 0.5
+    CanvasTint: {r: 1, g: 1, b: 1, a: 1}
+    flipY: 0
+    geomFlipY: 0
+    HDRPGamma: 1
+--- !u!114 &8582085226650113992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
+  m_Name: RenderObjects
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    passTag: RenderObjects
+    Event: 300
+    filterSettings:
+      RenderQueueType: 0
+      LayerMask:
+        serializedVersion: 2
+        m_Bits: 0
+      PassNames: []
+    overrideMaterial: {fileID: 0}
+    overrideMaterialPassIndex: 0
+    overrideDepthState: 0
+    depthCompareFunction: 4
+    enableWrite: 1
+    stencilSettings:
+      overrideStencilState: 0
+      stencilReference: 0
+      stencilCompareFunction: 8
+      passOperation: 0
+      failOperation: 0
+      zFailOperation: 0
+    cameraSettings:
+      overrideCamera: 0
+      restoreCamera: 1
+      offset: {x: 0, y: 0, z: 0, w: 0}
+      cameraFieldOfView: 60
