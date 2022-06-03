@@ -97,17 +97,17 @@ MonoBehaviour:
     renderToTexture: 0
     outputTexture: {fileID: 0}
     outputMipmap: 0
-    EffectFade: 0
+    EffectFade: 0.491
     PanFade: 0
     SrcBlur: 0
     SrcBright: 1
     SrcColor: 1.5
     SrcContrast: 1.5
-    BrushDetail: 0.1
-    BrushFill: 0.5
-    NumStrokes: 32768
-    Canvas: 0.4
-    ColorSpread: 0.5
+    BrushDetail: 0
+    BrushFill: 0.416
+    NumStrokes: 63057
+    Canvas: 0
+    ColorSpread: 0.483
     FlickerFreq: 15
     FlickerStrength: 0
     LayerScale: 0.8
@@ -115,16 +115,16 @@ MonoBehaviour:
     LightOffs: 60
     PaintDiff: 0.15
     PaintShiny: 0.5
-    PaintSpec: 0.15
+    PaintSpec: 0
     StrokeAng: 0
     StrokeBend: -1
     StrokeContour: 1
     StrokeDir: 0
     ScreenFOV: 0
-    MultiStroke: 6
-    strokeSeed: 10
+    MultiStroke: 3.96
+    strokeSeed: 30370
     Vignette: 1
-    CanvasBg: 0.5
+    CanvasBg: 0.296
     CanvasTint: {r: 1, g: 1, b: 1, a: 1}
     flipY: 0
     geomFlipY: 0
