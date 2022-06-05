@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 public class CArmed : MonoBehaviour, IInteract
 {
-    private weapon weapon_controller;
+    //private weapon weapon_controller;
     public DataWeapon data;
     [SerializeField] public string weapon_name = "Name";
     [SerializeField] public string weapon_description;
@@ -28,43 +27,43 @@ public class CArmed : MonoBehaviour, IInteract
     [SerializeField] protected bool isCrossing = false;
     [SerializeField] protected LayerMask collision;
     [SerializeField] protected float distance = 100f;
-    private Keyboard kb = Keyboard.current;
-    private Mouse ms = Mouse.current;
-    protected InputAction shoot;
-    protected InputAction reload;
-    protected InputAction crosshair;
-    protected InputAction drop;
+    //private Keyboard kb = Keyboard.current;
+    //private Mouse ms = Mouse.current;
+    //protected InputAction shoot;
+    //protected InputAction reload;
+    //protected InputAction crosshair;
+    //protected InputAction drop;
     private void Awake()
     {
-        weapon_controller = new weapon();
+        //    weapon_controller = new weapon();
+        //}
     }
+    //protected void OnEnable()
+    //{
+    //    //weapon_controller.Enable();
+    //    //shoot = weapon_controller.Weapon.Shoot;
+    //    //reload = weapon_controller.Weapon.Reload;
+    //    //crosshair = weapon_controller.Weapon.Crosshair;
+    //    //drop = weapon_controller.Weapon.Drop;
 
-    protected void OnEnable()
-    {
-        weapon_controller.Enable();
-        shoot = weapon_controller.Weapon.Shoot;
-        reload = weapon_controller.Weapon.Reload;
-        crosshair = weapon_controller.Weapon.Crosshair;
-        drop = weapon_controller.Weapon.Drop;
-        
-        shoot.Enable();
-        reload.Enable();
-        crosshair.Enable();
-        drop.Enable();
+    //    shoot.Enable();
+    //    reload.Enable();
+    //    crosshair.Enable();
+    //    drop.Enable();
 
-        
-    }
 
-    protected void OnDisable()
-    {
-        weapon_controller.Disable();
-        shoot.Disable();
-        reload.Disable();
-        crosshair.Disable();
-        drop.Disable();
+    //}
 
-        //shoot.performed += Shoot;
-    }
+    //protected void OnDisable()
+    //{
+    //    //weapon_controller.Disable();
+    //    shoot.Disable();
+    //    reload.Disable();
+    //    crosshair.Disable();
+    //    drop.Disable();
+
+    //    //shoot.performed += Shoot;
+    //}
 
     public void Start()
     {
@@ -110,7 +109,7 @@ public class CArmed : MonoBehaviour, IInteract
         DebugLog();
        if(type_Weapon == "Pistol" || type_Weapon == "Shootgun"|| type_Weapon == "Rifle" )
         {
-            if (ms.leftButton.wasPressedThisFrame)
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 if (ammo_in_mag >= 0)
                 {
@@ -125,7 +124,7 @@ public class CArmed : MonoBehaviour, IInteract
         }
         else if( type_Weapon == "Carabine")
         {
-           if(ms.leftButton.wasPressedThisFrame)
+           if(Input.GetKeyDown(KeyCode.Mouse0))
             { 
                 if (ammo_in_mag >= 0)
                 {
@@ -149,7 +148,7 @@ public class CArmed : MonoBehaviour, IInteract
         }
        else
         {
-            if (ms.leftButton.isPressed)
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 if(ammo_in_mag >= 0)
                 {
@@ -164,7 +163,7 @@ public class CArmed : MonoBehaviour, IInteract
     }
     public virtual void Reload()
     {
-       if(kb.rKey.wasPressedThisFrame)
+       if(Input.GetKeyDown(KeyCode.R))
         {
             if(extra_ammo >= 0)
             {

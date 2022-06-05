@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class CPPK : CArmed
 {
     
-    private weapon_Input _input;
+    //private weapon_Input _input;
     private Animator _anim;
     private Keyboard kb = Keyboard.current;
     private Mouse Ms = Mouse.current;
@@ -16,7 +16,7 @@ public class CPPK : CArmed
     public void Start()
     {
         base.Start();
-       _input = GetComponent<weapon_Input>();
+       //_input = GetComponent<weapon_Input>();
         _anim = GetComponent<Animator>();
     }
 
@@ -30,6 +30,7 @@ public class CPPK : CArmed
         
         //Debug.DrawRay(transform.position, -transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
         if (Ms.leftButton.wasPressedThisFrame)
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             ShootRay();
             Debug.Log("Entro Aqui");
@@ -44,13 +45,13 @@ public class CPPK : CArmed
             Shoot();
             _anim.SetBool("IsShooting", isShooting);
         }
-        if(Ms.rightButton.isPressed)
+        if(Input.GetKey(KeyCode.Mouse1))
         {   
             Debug.Log("Entra Aqui");
             isCrossing = true;
             _anim.SetBool("IsCrossing", true);
 
-            if (Ms.leftButton.wasPressedThisFrame )
+            if (Input.GetKeyDown(KeyCode.Mouse0) )
             {
                 ShootRay();
                 isShooting = true;
@@ -59,7 +60,7 @@ public class CPPK : CArmed
             }
         }
 
-        else if(Ms.rightButton.wasReleasedThisFrame)
+        else if(Input.GetKeyUp(KeyCode.Mouse1))
         {
             //_anim.playbackTime("Crosshair");
             _anim.StartPlayback();
@@ -69,22 +70,11 @@ public class CPPK : CArmed
         
         
 
-        if (kb.rKey.wasPressedThisFrame)
+        if (Input.GetKeyUp(KeyCode.R))
         {
             isReload = true;
             _anim.SetBool("CanReload", isReload);
         }
-        else if(!kb.rKey.wasReleasedThisFrame)
-        {
-            isReload = false;
-            _anim.SetBool("CanReload", isReload);
-        }
-
-        //if( == true)
-        //{
-        //    Debug.Log("Entro Aqui");
-        //    _anim.SetBool("IsShooting",true);
-        //}
     }
 
     public override void Shoot()

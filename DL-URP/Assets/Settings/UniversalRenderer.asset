@@ -90,29 +90,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9cede398fae4c65390e7dca49ec6df0, type: 3}
   m_Name: OilPaintingEffectURP
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   settings:
     WhenToApply: 550
     inputTexture: {fileID: 0}
     renderToTexture: 0
     outputTexture: {fileID: 0}
     outputMipmap: 0
-    EffectFade: 0.491
+    EffectFade: 0.459
     PanFade: 0
-    SrcBlur: 0
-    SrcBright: 1
+    SrcBlur: 0.118
+    SrcBright: 0.871
     SrcColor: 1.5
     SrcContrast: 1.5
-    BrushDetail: 0
-    BrushFill: 0.416
+    BrushDetail: 0.823
+    BrushFill: 0.775
     NumStrokes: 63057
-    Canvas: 0
+    Canvas: 0.181
     ColorSpread: 0.483
     FlickerFreq: 15
     FlickerStrength: 0
-    LayerScale: 0.8
-    LightAng: 135
-    LightOffs: 60
+    LayerScale: 0.803
+    LightAng: 195
+    LightOffs: 52.7
     PaintDiff: 0.15
     PaintShiny: 0.5
     PaintSpec: 0
@@ -121,10 +121,10 @@ MonoBehaviour:
     StrokeContour: 1
     StrokeDir: 0
     ScreenFOV: 0
-    MultiStroke: 3.96
-    strokeSeed: 30370
+    MultiStroke: 3.3
+    strokeSeed: 42153
     Vignette: 1
-    CanvasBg: 0.296
+    CanvasBg: 0.298
     CanvasTint: {r: 1, g: 1, b: 1, a: 1}
     flipY: 0
     geomFlipY: 0

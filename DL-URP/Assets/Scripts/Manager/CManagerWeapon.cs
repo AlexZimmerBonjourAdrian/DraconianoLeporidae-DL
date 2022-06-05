@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 namespace DL
 {
     public class CManagerWeapon : MonoBehaviour
@@ -22,8 +21,7 @@ namespace DL
         //[SerializeField] private GameObject[] weapons;
         //[SerializeField] private float SwitchDelay = 1f;
 
-        private Keyboard kc = Keyboard.current;
-        private Mouse MS = Mouse.current;
+        
         private int index;
         private bool isSwitching;
         private GameObject CurrentWeapon;
@@ -90,12 +88,12 @@ namespace DL
         
         private void EquipWeapon()
         {
-            if(kc.digit1Key.isPressed)
+            if(Input.GetKeyDown(KeyCode.Alpha1))
             {
                CurrentWeapon = SelectWeapon(0);
                 
             }
-            else if(kc.digit2Key.isPressed)
+            else if(Input.GetKeyDown(KeyCode.Alpha2))
             {
                 CurrentWeapon = SelectWeapon(1);
             }
@@ -116,7 +114,7 @@ namespace DL
         //Probar
         private void DropWeapon()
         {
-            if(kc.gKey.isPressed)
+            if(Input.GetKeyDown(KeyCode.G))
             {
                 //Todo:Dropea el arma, probar
                 weapons.Remove(CurrentWeapon);
