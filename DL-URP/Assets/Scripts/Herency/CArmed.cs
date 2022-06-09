@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class CArmed : MonoBehaviour, IInteract
+public class CArmed : MonoBehaviour
 {
     //private weapon weapon_controller;
     public DataWeapon data;
@@ -103,16 +103,18 @@ public class CArmed : MonoBehaviour, IInteract
     {
         return isCrossing;
     }
+
     public virtual void Shoot()
     {
-        DebugFunction();
-        DebugLog();
+       
        if(type_Weapon == "Pistol" || type_Weapon == "Shootgun"|| type_Weapon == "Rifle" )
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 if (ammo_in_mag >= 0)
                 {
+                    DebugFunction();
+                    DebugLog();
                     isShooting = true;
                     ammo_in_mag--;
                     //data.ammo_in_mag --;
@@ -165,7 +167,7 @@ public class CArmed : MonoBehaviour, IInteract
     {
        if(Input.GetKeyDown(KeyCode.R))
         {
-            if(extra_ammo >= 0)
+            if(ammo_in_mag >= 0)
             {
                 ammo_in_mag = mag_size;
             }
@@ -224,4 +226,6 @@ public class CArmed : MonoBehaviour, IInteract
     {
         
     }
+
+  
 }

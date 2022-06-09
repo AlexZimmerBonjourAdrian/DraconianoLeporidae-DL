@@ -11,7 +11,7 @@ public class CPPK : CArmed
     private Keyboard kb = Keyboard.current;
     private Mouse Ms = Mouse.current;
 
-    public float range = 100f;
+    public float range = -100f;
 
     public void Start()
     {
@@ -19,21 +19,20 @@ public class CPPK : CArmed
        //_input = GetComponent<weapon_Input>();
         _anim = GetComponent<Animator>();
     }
-
-     void Update()
+    public new void Update()
     {
+        Reload();
         Controller();
+        Shoot();
     }
-
     private void Controller()
     {
         
         //Debug.DrawRay(transform.position, -transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
-        if (Ms.leftButton.wasPressedThisFrame)
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             ShootRay();
-            Debug.Log("Entro Aqui");
+            //Debug.Log("Entro Aqui");
             isShooting = true;
             Shoot();
             _anim.SetBool("IsShooting", isShooting);
@@ -73,7 +72,7 @@ public class CPPK : CArmed
         if (Input.GetKeyUp(KeyCode.R))
         {
             isReload = true;
-            _anim.SetBool("CanReload", isReload);
+            //_anim.SetBool("CanReload", isReload);
         }
     }
 
@@ -135,11 +134,12 @@ public class CPPK : CArmed
     public void ShootRay()
     {
         RaycastHit hit;
-        if(Physics.Raycast(transform.position, transform.forward, out hit, range))
+        if(Physics.Raycast(transform.position, transform.forward, out hit, -range))
         {
-            if(hit.collider.tag == "Enemy")
+            if(hit.collider.tag == "enemy")
             {
-                hit.collider.GetComponent<CDebugWeapon>().TakeDamage(damage);
+                hit.collider.GetComponent<CMafioso>().DestroyEnemy();
+                Debug.Log(hit.collider.GetComponent<CMafioso>().Hearth);
             }
         }
     }

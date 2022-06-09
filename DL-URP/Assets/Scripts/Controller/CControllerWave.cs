@@ -20,13 +20,25 @@ public class CControllerWave : MonoBehaviour
     public float timeBetweenWaves = 5f;
     public float WaveCountDown;
 
+    [SerializeField] private List<Transform> _List_Transform = new List<Transform>();
+    
+    public Transform tesSpawnTransform;
+    public int enemiesKilled;
+    private int WaveNumber;
+    private int enemySpanwAmout = 2;
+    private int enemySpawning;
     void Start()
     {
+        
         WaveCountDown = timeBetweenWaves;
+
+        StartWave();
     }
 
+ 
     void Update()
     {
+       
         if(WaveCountDown <= 0)
         {
 
@@ -34,6 +46,11 @@ public class CControllerWave : MonoBehaviour
             Debug.Log("https://www.youtube.com/watch?v=q0SBfDFn2Bs&ab_channel=Brackeys");
                
         }
+        
+        //if (Input.GetKeyDown(KeyCode.Q)) 
+        //{
+        //    TestEnemyWaveSpawn();
+        //}
     }
     
 
@@ -62,25 +79,70 @@ public class CControllerWave : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
         _inst = this;
     }
-
-   
-
-   
-
-    //Todo Probar
-    private void StartWave(int NumberWabe, int MaxNumEnemy,List<Transform> positions)
-
+    private void SpawnEnemy()
     {
-        for(int i  = 0; i <= NumberWabe; i++)
+        int SpawnId = Random.Range(0, _List_Transform.Count);
+        CManagerEnemy.Inst.Spawn(_List_Transform[SpawnId].transform.position);
+    }
+
+    private void StartWave()
+    {
+        WaveNumber = 1;
+        enemySpanwAmout = 2;
+        enemiesKilled = 0;
+        enemySpawning = enemySpanwAmout;
+        for(int i = 0; i < enemySpanwAmout; i++)
         {
-            foreach (Transform p in positions)
-            {
-                for (int j = 0; j <= (MaxNumEnemy/NumberWabe); j++)
-             {
-                    CManagerEnemy.Inst.Spawn(p.position);  
-             }
-            }
+            SpawnEnemy();
+        }
+        
+    }
+
+    
+    private void NextWave()
+    {
+        WaveNumber++;
+        enemySpanwAmout += 2;
+        enemiesKilled = 0;
+        for (int i = 0; i < enemySpanwAmout; i++)
+        {
+            SpawnEnemy();
         }
     }
 
+    public void KilledEnemy()
+    {
+        
+       
+        if(enemiesKilled >= enemySpanwAmout)
+        {
+            NextWave();
+        }
+        else
+        {
+            enemiesKilled++;
+        }
+    }
 }
+   //private void TestEnemyWaveSpawn()
+   // {
+   //     CManagerEnemy.Inst.Spawn(tesSpawnTransform.position);
+   // }
+
+   // //Todo Probar
+   // private void Waves(int NumberWabe, int MaxNumEnemy,List<Transform> positions)
+
+   // {
+   //     for(int i  = 0; i <= NumberWabe; i++)
+   //     {
+   //         foreach (Transform p in positions)
+   //         {
+   //             for (int j = 0; j <= (MaxNumEnemy/NumberWabe); j++)
+   //          {
+   //                 CManagerEnemy.Inst.Spawn(p.position);  
+   //          }
+   //         }
+   //     }
+   // }
+
+

@@ -9,6 +9,13 @@ public class CPlayerMovementAdvance : MonoBehaviour
     private float moveSpeed;
     public float walkspeed;
     public float sprintspeed;
+    public float slideSpeed;
+
+    private float desiredMoveSpeed;
+    private float lastDesiredMoveSpeed;
+
+    public float speedIncreaseMultiplier;
+    public float slopeIncreaseMultiplier;
 
     public float groundDrag;
 
@@ -48,14 +55,20 @@ public class CPlayerMovementAdvance : MonoBehaviour
     Rigidbody rb;
 
     public MovementState state;
+
+    [SerializeField] private float yOffset = 6.5f;
+    [SerializeField] private float xOffset = 1.2f;
     public enum MovementState
     {
         walking,
         sprinting,
         crouching,
+        sliding,
         air
+      
     }
 
+    public bool sliding;
     // Start is called before the first frame update
     void Start()
     {
@@ -114,7 +127,22 @@ public class CPlayerMovementAdvance : MonoBehaviour
     }
     private void StateHandle()
     {
-        if(Input.GetKey(crounchKey))
+      
+        if(sliding)
+        {
+            state = MovementState.sliding;
+
+            if(OnSlope() && rb.velocity.y < 0.1f)
+            {
+                desiredMoveSpeed = slideSpeed;
+            }
+            else
+            {
+                desiredMoveSpeed = sprintspeed;
+            }
+        }
+        
+        else if(Input.GetKey(crounchKey))
         {
             state = MovementState.crouching;
             moveSpeed = crounchSpeed;
@@ -134,6 +162,38 @@ public class CPlayerMovementAdvance : MonoBehaviour
         {
             state = MovementState.air;
         }
+
+        //if(Mathf.Abs(d))
+        if(Mathf.Abs(desiredMoveSpeed - lastDesiredMoveSpeed)> 4f && moveSpeed != 0)
+        {
+            StopAllCoroutines();
+          //  StartCoroutine(SmoothlyLerpMoveSpeed());
+        }
+    }
+
+    private IEnumerator SmoothlyLerpMoveSpeed()
+    {
+        float time = 0;
+        float difference = Mathf.Abs(desiredMoveSpeed - moveSpeed);
+        float startValue = moveSpeed;
+
+        while(time < difference)
+        {
+            moveSpeed = Mathf.Lerp(startValue, desiredMoveSpeed, time / difference);
+            if (OnSlope())
+            {
+                float slopeAngle = Vector3.Angle(Vector3.up, slopeHit.normal);
+                float slopeAngleIncrease = 1 + (slopeAngle / 90f);
+
+                time += Time.deltaTime * speedIncreaseMultiplier * slopeIncreaseMultiplier * slopeAngleIncrease;
+
+            }
+            else
+                time += Time.deltaTime * speedIncreaseMultiplier;
+
+            yield return null;
+        }
+        moveSpeed = desiredMoveSpeed;
     }
 
     private void MovePlayer()
@@ -142,7 +202,7 @@ public class CPlayerMovementAdvance : MonoBehaviour
 
         if (OnSlope() && !exitingSlope)
         {
-            rb.AddForce(GetSlopeMoveDirection() * moveSpeed * 20f, ForceMode.Force);
+            rb.AddForce(GetSlopeMoveDirection(moveDirection) * moveSpeed * 20f, ForceMode.Force);
 
             if (rb.velocity.y > 0)
                 rb.AddForce(Vector3.down * 80f, ForceMode.Force);
@@ -179,8 +239,14 @@ public class CPlayerMovementAdvance : MonoBehaviour
                 rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
             }
         }
-            
-
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Leadge")
+        {
+            rb.AddForce(transform.up * yOffset, ForceMode.Impulse);
+            rb.AddForce(transform.forward * xOffset, ForceMode.Acceleration);
+        }
     }
     private void Jump()
     {
@@ -198,7 +264,7 @@ public class CPlayerMovementAdvance : MonoBehaviour
         exitingSlope = false;
     }
 
-    private bool OnSlope()
+    public bool OnSlope()
     {
         if(Physics.Raycast(transform.position,Vector3.down,out slopeHit,playerHeight * 0.5f + 0.3f))
         {
@@ -209,8 +275,8 @@ public class CPlayerMovementAdvance : MonoBehaviour
         return false;
     }
 
-    private Vector3 GetSlopeMoveDirection()
+   public Vector3 GetSlopeMoveDirection(Vector3 direction)
     {
-        return Vector3.ProjectOnPlane(moveDirection, slopeHit.normal).normalized;
+        return Vector3.ProjectOnPlane(direction, slopeHit.normal).normalized;
     }
 }

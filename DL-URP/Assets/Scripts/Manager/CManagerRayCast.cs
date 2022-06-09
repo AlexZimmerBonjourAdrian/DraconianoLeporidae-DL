@@ -55,7 +55,7 @@ public class CManagerRayCast : MonoBehaviour
                 Debug.Log("Pistol");
                 if (hit.collider.tag == "Enemy")
                 {
-                    hit.collider.GetComponent<CEnemy>().TakeDamage(damageWeapon);
+                    //hit.collider.GetComponent<CEnemy>().TakeDamage(damageWeapon);
                 }
                 break;
             //case "Shootgun":

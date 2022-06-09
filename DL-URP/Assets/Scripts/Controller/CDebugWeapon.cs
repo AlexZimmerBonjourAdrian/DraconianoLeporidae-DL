@@ -26,23 +26,23 @@ public class CDebugWeapon : CEnemy, IInteract
         
     }
 
-    public override void TakeDamage(int damage)
-    {
-        Health -= damage;
+    //public  void TakeDamage(int damage)
+    //{
+    //    Health -= damage;
 
-        if (Health <= 0) Invoke(nameof(DestroyEnemy), .5f);
+    //    if (Health <= 0) Invoke(nameof(DestroyEnemy), .5f);
 
-    }
+    //}
 
-    protected override void DestroyEnemy()
-    {
-        base.DestroyEnemy();
-    }
+    //protected override void DestroyEnemy()
+    //{
+    //    base.DestroyEnemy();
+    //}
 
-    public override void Dead()
-    {
-        Debug.Log(Health);
-    }
+    //public override void Dead()
+    //{
+    //    Debug.Log(Health);
+    //}
 
 
 

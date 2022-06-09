@@ -22,7 +22,7 @@ public class CManagerEnemy : MonoBehaviour
 
     private ArrayList _EnemyList = new ArrayList();
     [SerializeField] private GameObject _EnemyAsset;
-
+    //[SerializeField]private List<Transform> transforms = new List<Transform>(); 
     public void Awake()
     {
         if(_inst != null && _inst != this)

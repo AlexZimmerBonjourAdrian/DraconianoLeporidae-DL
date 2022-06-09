@@ -6,6 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: d1c3109bdb54ad54c8a2b2838528e640
+    path: Assets/Scenes/Playground.unity
+    guid: 707acc8dffb72b144bb1ffbe1c965f3d
+  - enabled: 1
+    path: Assets/Scenes/EnemyTestLevel.unity
+    guid: 51a1f044afba0a74dbedcdd946c67a2e
+  - enabled: 1
+    path: Assets/Scenes/MenyTest.unity
+    guid: a46b43354acd2654f92cf39ad24dae44
+  - enabled: 1
+    path: Assets/Scenes/PickUp.unity
+    guid: 7ac26c282e9ae8945a247aa0d155ac00
+  - enabled: 1
+    path: Assets/Scenes/PickUpMenu.unity
+    guid: e2641247c2bb09346bc60871e8e1e848
+  - enabled: 1
+    path: Assets/Scenes/PlayerMovementTest.unity
+    guid: e723cc97e909c6e4cb479cffcfa62454
+  - enabled: 1
+    path: Assets/Scenes/Movement.unity
+    guid: 981c0833db4a718448fadb9a604bcd92
+  - enabled: 1
+    path: Assets/Scenes/Weapon.unity
+    guid: a89a17ea2a39b0940ba5e713010c0806
   m_configObjects: {}

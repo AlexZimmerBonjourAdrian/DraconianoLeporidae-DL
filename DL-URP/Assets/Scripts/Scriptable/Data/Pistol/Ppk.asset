@@ -23,8 +23,9 @@ MonoBehaviour:
   offset: 0.2
   multidisparo: 0
   exparsion: 1
-  ammo_in_mag: 15
+  ammo_in_mag: 200
   extra_ammo: 30
   mag_size: 60
   damage: 10
   fire_rate: 1.5
+  distance: 100
