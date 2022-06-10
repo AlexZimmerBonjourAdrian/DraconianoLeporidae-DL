@@ -25,23 +25,22 @@ public class CPPK : CArmed
         Controller();
         Shoot();
     }
+    [SerializeField] private Transform ShootPosition;
     private void Controller()
     {
         
         //Debug.DrawRay(transform.position, -transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            ShootRay();
+            RayCastForEne();
             //Debug.Log("Entro Aqui");
             isShooting = true;
-            Shoot();
             _anim.SetBool("IsShooting", isShooting);
            
         }
         else if(this._anim.GetCurrentAnimatorStateInfo(0).IsName("Shoot"))
         {
             isShooting = false;
-            Shoot();
             _anim.SetBool("IsShooting", isShooting);
         }
         if(Input.GetKey(KeyCode.Mouse1))
@@ -52,9 +51,8 @@ public class CPPK : CArmed
 
             if (Input.GetKeyDown(KeyCode.Mouse0) )
             {
-                ShootRay();
+                RayCastForEne();
                 isShooting = true;
-                Shoot();
                 _anim.SetBool("IsShooting", isShooting);
             }
         }
@@ -131,16 +129,28 @@ public class CPPK : CArmed
         return GetIsCrossing();
     }
 
-    public void ShootRay()
+    void RayCastForEne()
     {
         RaycastHit hit;
-        if(Physics.Raycast(transform.position, transform.forward, out hit, -range))
+        if (Physics.Raycast(ShootPosition.position, transform.forward, out hit, 1 << LayerMask.NameToLayer("enemy")))
         {
-            if(hit.collider.tag == "enemy")
+            try
             {
-                hit.collider.GetComponent<CMafioso>().DestroyEnemy();
-                Debug.Log(hit.collider.GetComponent<CMafioso>().Hearth);
+
+                Debug.Log("Hit an Enemy");
+                //Rigidbody rb = hit.transform.GetComponent<Rigidbody>();
+                //rb.constraints = RigidbodyConstraints.None;
+                //rb.AddForce(transform.parent.transform.forward * 500);
+                hit.collider.gameObject.GetComponent<CMafioso>().DestroyEnemy();
+                // Debug.Log(hit.collider.gameObject.GetComponent<CMafioso>().Hearth);
+                Debug.DrawRay(transform.position, transform.forward, Color.red);
             }
+            catch
+            {
+
+            }
+
+
         }
     }
 }
