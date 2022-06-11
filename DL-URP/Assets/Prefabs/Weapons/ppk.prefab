@@ -121,7 +121,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6734123308625167730}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.98, y: 2.26, z: 2.76}
+  m_LocalPosition: {x: -3.66, y: 2.26, z: 2.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -272,4 +272,17 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   distance: 100
+  fireRate: 0.1
+  _canShoot: 0
+  flashes: []
+  normalLocalPosition: {x: 0, y: 0, z: 0}
+  aimingLocalPosition: {x: 0, y: 0, z: 0}
+  _ammoInReserve: 0
+  aimSmoothing: 10
+  mouseSensitivity: 10
+  weaponSwayAmount: 10
+  randomizeRecoil: 0
+  randomRecoilConstraints: {x: 0, y: 0}
+  recoilPattern: []
   range: 100
+  ShootPosition: {fileID: 0}

@@ -6,7 +6,7 @@ public class CManagerPickUp : MonoBehaviour
 {
 
     public List<Transform> transforms;
-    private List<GameObject> _WeaponAsset;
+   [SerializeField] private List<GameObject> _WeaponAsset;
 
      private List<CWeaponPickUp> _PickUpList;
     public static CManagerPickUp Inst

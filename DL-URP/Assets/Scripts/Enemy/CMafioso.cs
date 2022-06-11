@@ -135,7 +135,8 @@ public class CMafioso : MonoBehaviour
         if (Hearth <= 0)
         {
             iSDead = true;
-            Invoke(nameof(DestroyEnemy), 0.5f);
+            //Invoke(nameof(DestroyEnemy), 0.5f);
+            SetState((int)states.STATE_DEAD);
         }
     }
     public void DestroyEnemy()
@@ -176,7 +177,7 @@ public class CMafioso : MonoBehaviour
                 Debug.Log("Estado Shoot Player");
                 break;
             case (int)states.STATE_DEAD:
-                Debug.Log("Estado Dead");
+                Invoke(nameof(DestroyEnemy), 0.5f);
                 break;
             case (int)states.STATE_SCARED:
                 Debug.Log("Estado Scared");
@@ -227,5 +228,10 @@ public class CMafioso : MonoBehaviour
     public void DebugHealth()
     {
         Debug.Log(Hearth);
+    }
+
+    public float GetHearth()
+    {
+        return Hearth;
     }
 }

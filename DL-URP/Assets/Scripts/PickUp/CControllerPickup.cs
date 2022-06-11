@@ -7,10 +7,8 @@ public class CControllerPickup : MonoBehaviour
 
     private Keyboard kb = Keyboard.current;
     // Start is called before the first frame update
-   [SerializeField] private GameObject _AssetPPk;
-   [SerializeField] private GameObject _AssetMP5K;
-    [SerializeField]
-    private Transform _SpawnPosition;
+    [SerializeField] private List<Transform> _SpawnTransform;
+    [SerializeField] private List<GameObject> _WeaponAsset;
     private void Start()
     {
 
@@ -23,9 +21,11 @@ public class CControllerPickup : MonoBehaviour
     }
     private void TestController()
     {
-        if(kb.qKey.wasPressedThisFrame)
+        if(Input.GetKeyDown(KeyCode.Q))
         {
-            CManagerPickUp.Inst.SpawnWeapon(transform.position, _AssetPPk);
+            int WeaponId = Random.Range(0, _WeaponAsset.Count);
+            int Positiion = Random.Range(0, _SpawnTransform.Count);
+            CManagerPickUp.Inst.SpawnWeapon(_SpawnTransform[Positiion].position, _WeaponAsset[WeaponId]);
         }
         //if(kb.eKey.wasPressedThisFrame)
         //{

@@ -65,10 +65,7 @@ public class CArmed : MonoBehaviour
     //    //shoot.performed += Shoot;
     //}
 
-    public void Start()
-    {
-        LoadInfo();
-    }
+   
     public virtual string GetWeaponName()
     {
         return weapon_name;
@@ -107,73 +104,82 @@ public class CArmed : MonoBehaviour
     public virtual void Shoot()
     {
        
-       if(type_Weapon == "Pistol" || type_Weapon == "Shootgun"|| type_Weapon == "Rifle" )
-        {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
-            {
-                if (ammo_in_mag >= 0)
-                {
-                    DebugFunction();
-                    DebugLog();
-                    isShooting = true;
-                    ammo_in_mag--;
-                    //data.ammo_in_mag --;
-                    extra_ammo--;
-                    //data.extra_ammo --;
-                }
-                isShooting = false;
-            }
-        }
-        else if( type_Weapon == "Carabine")
-        {
-           if(Input.GetKeyDown(KeyCode.Mouse0))
-            { 
-                if (ammo_in_mag >= 0)
-                {
-                    isShooting = true;
-                    for (int i = 3; i >= 0; i--)
-                    {
-                    ammo_in_mag -= 1;
-                    //data.ammo_in_mag -= 1;
-                    extra_ammo -= 1;
-                    //data.extra_ammo -= 1;
-                    }
+       //if(type_Weapon == "Pistol" || type_Weapon == "Shootgun"|| type_Weapon == "Rifle" )
+       // {
+       //     if (Input.GetKeyDown(KeyCode.Mouse0))
+       //     {
+       //         if (ammo_in_mag >= 0)
+       //         {
+       //             DebugFunction();
+       //             DebugLog();
+       //             isShooting = true;
+       //             ammo_in_mag--;
+       //             //data.ammo_in_mag --;
+       //             extra_ammo--;
+       //             //data.extra_ammo --;
+       //         }
+       //         isShooting = false;
+       //     }
+       // }
+       // else if( type_Weapon == "Carabine")
+       // {
+       //    if(Input.GetKeyDown(KeyCode.Mouse0))
+       //     { 
+       //         if (ammo_in_mag >= 0)
+       //         {
+       //             isShooting = true;
+       //             for (int i = 3; i >= 0; i--)
+       //             {
+       //             ammo_in_mag -= 1;
+       //             //data.ammo_in_mag -= 1;
+       //             extra_ammo -= 1;
+       //             //data.extra_ammo -= 1;
+       //             }
                    
-                }
-                else if(ammo_in_mag < 0)
-                {
-                    ammo_in_mag = 0;
-                    ammo_in_mag = 0;
-                }
-                isShooting = false;
-            }
-        }
-       else
-        {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
-            {
-                if(ammo_in_mag >= 0)
-                {
-                    ammo_in_mag -= 1;
-                    //data.ammo_in_mag -= 1;
-                    extra_ammo -= 1;
-                    //data.extra_ammo -= 1;
-                }
-            }
-            isShooting = false;
-        }
+       //         }
+       //         else if(ammo_in_mag < 0)
+       //         {
+       //             ammo_in_mag = 0;
+       //             ammo_in_mag = 0;
+       //         }
+       //         isShooting = false;
+       //     }
+       // }
+       //else
+       // {
+       //     if (Input.GetKeyDown(KeyCode.Mouse0))
+       //     {
+       //         if(ammo_in_mag >= 0)
+       //         {
+       //             ammo_in_mag -= 1;
+       //             //data.ammo_in_mag -= 1;
+       //             extra_ammo -= 1;
+       //             //data.extra_ammo -= 1;
+       //         }
+       //     }
+       //     isShooting = false;
+       // }
     }
     public virtual void Reload()
     {
-       if(Input.GetKeyDown(KeyCode.R))
-        {
-            if(ammo_in_mag >= 0)
-            {
-                ammo_in_mag = mag_size;
-            }
-        }
+       //if(Input.GetKeyDown(KeyCode.R))
+       // {
+       //     if(ammo_in_mag >= 0)
+       //     {
+       //         ammo_in_mag = mag_size;
+       //     }
+       // }
     }
 
+
+    public void Equip()
+    {
+        this.gameObject.SetActive(true);
+    }
+    public void Desequip()
+    {
+        this.gameObject.SetActive(false);
+    }
     public virtual void Add_ammo(DataPickUp PickUp)
     {
         extra_ammo += PickUp.Ammo;
