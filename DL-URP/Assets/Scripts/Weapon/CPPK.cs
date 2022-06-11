@@ -113,6 +113,7 @@ public class CPPK : CArmed
         //{
         //    _anim.SetBool("IsShooting", isShooting);
         //}
+       
         //if(Input.GetKey(KeyCode.Mouse1))
         //{   
         //    Debug.Log("Entra Aqui");
@@ -209,7 +210,6 @@ public class CPPK : CArmed
         {
             try
             {
-
                 Debug.Log("Hit an Enemy");
                 //Rigidbody rb = hit.transform.GetComponent<Rigidbody>();
                 //rb.constraints = RigidbodyConstraints.None;

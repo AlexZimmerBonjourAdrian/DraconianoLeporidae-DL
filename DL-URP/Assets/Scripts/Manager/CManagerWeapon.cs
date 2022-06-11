@@ -50,25 +50,27 @@ namespace DL
         
         public void AddWeapon(GameObject Weapon)
         {
+            var id = 0;
             if(weapons.Count <= 2)
             {
                 foreach(GameObject w in weapons)
                 {
                     var ScrtiptWeapon = w.GetComponent<CArmed>();
                     var ScriptableAddWeapon = Weapon.GetComponent<CArmed>();
-                    if( ScrtiptWeapon.GetWeaponName() == ScriptableAddWeapon.GetWeaponName())
+                    if( ScrtiptWeapon.GetWeaponName() != ScriptableAddWeapon.GetWeaponName())
                     {
-                        return;
+                        id++;
+                        continue;
                     }
                     else
                     {
-                        continue;
+                        return;
                     }
                 }
                 //Debug.Log("Entra en agregar el arma");
                 weapons.Add(Weapon);
                 CurrentWeapon = Spawn(gameObject.transform.position,Weapon);
-                SelectWeapon(0);
+                SelectWeapon(id);
             }
         }
         // Probar
