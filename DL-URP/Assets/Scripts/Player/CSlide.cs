@@ -15,7 +15,7 @@ public class CSlide : MonoBehaviour
     public float slideForce;
     private float sliderTimer;
 
-    public float sliderYScale;
+    [SerializeField] private float sliderYScale;
     private float startYScale;
 
     [Header("Input")]

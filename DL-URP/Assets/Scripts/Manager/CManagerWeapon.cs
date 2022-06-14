@@ -16,8 +16,9 @@ namespace DL
         [SerializeField] private List<GameObject> _allWeaponAssets;
         private List<GameObject> weapons = new List<GameObject>();
         private GameObject[] auto_spawn_weapon = new GameObject[1];
-        private List<CPPK> _ListHaveWeapon = new List<CPPK>();
+        private List<CArmed> _ListHaveWeapon = new List<CArmed>();
         [SerializeField]private Transform[] _tranformSlot = new Transform[2];
+        private int selectedWeapon = 0;
         //[SerializeField] private GameObject[] weapons;
         //[SerializeField] private float SwitchDelay = 1f;
 
@@ -33,7 +34,7 @@ namespace DL
             //Auto Preset Prefab
             _allWeapon[0] = Resources.Load("Assets/Prefabs/Weapons/ppk.prefab") as GameObject;
             auto_spawn_weapon[0] = Resources.Load("Assets/Prefabs/Weapons/ppk.prefab") as GameObject;
-      
+            
         }
         private void Start()
         {
@@ -42,16 +43,19 @@ namespace DL
         public void Update()
         {
            for(int i = weapons.Count -1; i>= 0; i--)
-        {
+          {
             if (weapons[i] == null)
                 weapons.RemoveAt(i);
-        }
+         }
+            EquipWeapon();
+            //SelectedWeapon();
+            GetWeaponArray();
         }
         
         public void AddWeapon(GameObject Weapon)
         {
             var id = 0;
-            if(weapons.Count <= 2)
+            if(weapons.Count <= 1)
             {
                 foreach(GameObject w in weapons)
                 {
@@ -68,36 +72,63 @@ namespace DL
                     }
                 }
                 //Debug.Log("Entra en agregar el arma");
-                weapons.Add(Weapon);
                 CurrentWeapon = Spawn(gameObject.transform.position,Weapon);
-                SelectWeapon(id);
+                //SelectWeapon(id);
+                selectedWeapon = id;
+            }
+        }
+        private void SelectedWeapon()
+        {
+            int i = 0;
+            foreach (Transform weapon in transform)
+            {
+                if (i == selectedWeapon)
+                    weapon.gameObject.SetActive(true);
+                else
+                    weapon.gameObject.SetActive(false);
+                i++;
+
             }
         }
         // Probar
-        public GameObject SelectWeapon(int ind)
-        {
-            index = ind;
-            GameObject w;
-            for (int i= ind; i>=index-1;i++)
-            {
-               w  = weapons[i];
-                CurrentWeapon = w;
-                return w;
-            }
+        //public GameObject SelectWeapon(int ind)
+        //{
+        //    index = ind;
+        //    GameObject w;
+        //    for (int i= ind; i>=index;i++)
+        //    {
+        //       // Desequiped();
+        //       w  = weapons[index];
+        //        CurrentWeapon = w;
+        //       // Equipped();
+        //        return w;
+        //    }
 
-            return null;
-        }
+        //    return null;
+        //}
         
         private void EquipWeapon()
         {
-            if(Input.GetKeyDown(KeyCode.Alpha1))
+            int previousSelectedWeapon = selectedWeapon;
+
+           if(Input.GetAxis("Mouse ScrollWheel") > 0f)
             {
-               CurrentWeapon = SelectWeapon(0);
-                
+                if (selectedWeapon >= transform.childCount - 1)
+                    selectedWeapon = 0;
+                else
+                    selectedWeapon++;
             }
-            else if(Input.GetKeyDown(KeyCode.Alpha2))
+            if (Input.GetAxis("Mouse ScrollWheel") < 0f)
             {
-                CurrentWeapon = SelectWeapon(1);
+                if (selectedWeapon <= 0)
+                    selectedWeapon = transform.childCount - 1;
+                else
+                    selectedWeapon--;
+            }
+
+            if(previousSelectedWeapon != selectedWeapon)
+            {
+                SelectedWeapon();
             }
         }
 
@@ -106,9 +137,10 @@ namespace DL
             GameObject obj = (GameObject)Instantiate(_Weapon, post, Quaternion.identity);
            
             obj.transform.parent = gameObject.transform;
+            weapons.Add(obj);
             obj.transform.localEulerAngles= Vector3.zero;
             obj.transform.localPosition = new Vector3(0f, -0.131f, 0.122f);
-            CPPK newWeapon = obj.GetComponent<CPPK>();
+            CArmed newWeapon = obj.GetComponent<CArmed>();
             _ListHaveWeapon.Add(newWeapon);
 
             return obj;
@@ -124,16 +156,26 @@ namespace DL
             }
         }
         
+        private void Desequiped()
+        {
+            CurrentWeapon.SetActive(false);
+        }
         private void Equipped()
         {
-
+            CurrentWeapon.SetActive(true);
         }
-        
-        
 
         public GameObject GetCurrentWeapon()
         {
             return CurrentWeapon;
+        }
+
+        public void GetWeaponArray()
+        {
+            foreach (GameObject w in weapons)
+            {
+                Debug.Log(w.name);
+            }
         }
         //public static CManagerWeapon Inst
         //{

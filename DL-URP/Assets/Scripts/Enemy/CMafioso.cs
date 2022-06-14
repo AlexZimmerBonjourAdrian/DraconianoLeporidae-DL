@@ -161,7 +161,7 @@ public class CMafioso : MonoBehaviour
 
 
 
-        DebugHealth();
+        //DebugHealth();
         switch (state)
         {
             case (int)states.STATE_STAND:
@@ -177,7 +177,8 @@ public class CMafioso : MonoBehaviour
                 Debug.Log("Estado Shoot Player");
                 break;
             case (int)states.STATE_DEAD:
-                Invoke(nameof(DestroyEnemy), 0.5f);
+                CControllerWave.Inst.KilledEnemy();
+                Invoke(nameof(DestroyEnemy), 0.1f);
                 break;
             case (int)states.STATE_SCARED:
                 Debug.Log("Estado Scared");
@@ -225,10 +226,10 @@ public class CMafioso : MonoBehaviour
         SetState((int)states.STATE_DEAD);
     }
 
-    public void DebugHealth()
-    {
-        Debug.Log(Hearth);
-    }
+    //public void DebugHealth()
+    //{
+    //    Debug.Log(Hearth);
+    //}
 
     public float GetHearth()
     {

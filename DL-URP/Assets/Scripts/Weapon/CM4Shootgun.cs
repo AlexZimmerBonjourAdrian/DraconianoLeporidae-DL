@@ -142,7 +142,15 @@ public class CM4Shootgun : CArmed
         return GetIsCrossing();
     }
 
-
+    public override void Equip()
+    {
+        base.Equip();
+    }
+    public override  void Desequip()
+    {
+        base.Desequip();
+    }
+    
     private void RayCastForEne()
     {
         RaycastHit hit;

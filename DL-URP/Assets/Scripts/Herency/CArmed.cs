@@ -100,7 +100,10 @@ public class CArmed : MonoBehaviour
     {
         return isCrossing;
     }
-
+    public virtual void Add_ammo(DataPickUp PickUp)
+    {
+        extra_ammo += PickUp.Ammo;
+    }
     public virtual void Shoot()
     {
        
@@ -172,18 +175,15 @@ public class CArmed : MonoBehaviour
     }
 
 
-    public void Equip()
+    public virtual void Equip()
     {
         this.gameObject.SetActive(true);
     }
-    public void Desequip()
+    public virtual void Desequip()
     {
         this.gameObject.SetActive(false);
     }
-    public virtual void Add_ammo(DataPickUp PickUp)
-    {
-        extra_ammo += PickUp.Ammo;
-    }
+
 
     public void DebugLog()
     {

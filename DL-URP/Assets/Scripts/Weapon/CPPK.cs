@@ -196,6 +196,14 @@ public class CPPK : CArmed
         return GetIsCrossing();
     }
 
+    public override void Equip()
+    {
+        base.Equip();
+    }
+    public override void Desequip()
+    {
+        base.Desequip();
+    }
     IEnumerator Shootgun()
     {
         RayCastForEne();

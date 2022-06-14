@@ -120,6 +120,14 @@ public class CAK74M : CArmed
         return GetIsCrossing();
     }
 
+    public override void Equip()
+    {
+        base.Equip();
+    }
+    public override void Desequip()
+    {
+        base.Desequip();
+    }
     IEnumerator ShootGun()
     {
         RayCastForEne();

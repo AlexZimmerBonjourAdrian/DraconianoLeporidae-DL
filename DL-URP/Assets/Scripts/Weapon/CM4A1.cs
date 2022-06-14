@@ -125,7 +125,14 @@ public class CM4A1 : CArmed
     {
         return GetIsCrossing();
     }
-
+    public override void Equip()
+    {
+        base.Equip();
+    }
+    public override void Desequip()
+    {
+        base.Desequip();
+    }
     void RayCastForEne()
     {
         RaycastHit hit;
