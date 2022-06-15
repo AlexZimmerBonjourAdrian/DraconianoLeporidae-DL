@@ -22,7 +22,7 @@ public class CSlide : MonoBehaviour
     public KeyCode slideKey = KeyCode.LeftControl;
     private float horizontalInput;
     private float verticalInput;
-
+    [SerializeField] private BoxCollider kickEnemyDash;
 
     // Start is called before the first frame update
     void Start()
@@ -38,10 +38,16 @@ public class CSlide : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
-
+        var Collider = kickEnemyDash.gameObject;
         //if(Input.GetKeyDown(slideKey) && (horizontalInput != 0 || verticalInput != 0))
         if (Input.GetKeyDown(slideKey) && (horizontalInput != 0 || verticalInput != 0))
+        {
             StartSlide();
+            if(Collider.tag == "enemy")
+      
+            Collider.GetComponent<Rigidbody>().AddForce(-transform.forward, ForceMode.Force);
+        }
+            
         if (Input.GetKeyUp(slideKey) && pm.sliding)
             StopSlide();
        
