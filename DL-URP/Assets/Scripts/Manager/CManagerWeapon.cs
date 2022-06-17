@@ -50,11 +50,11 @@ namespace DL
             EquipWeapon();
             //SelectedWeapon();
             GetWeaponArray();
+            DropWeapon();
         }
         
         public void AddWeapon(GameObject Weapon)
         {
-            var id = 0;
             if(weapons.Count <= 1)
             {
                 foreach(GameObject w in weapons)
@@ -63,7 +63,7 @@ namespace DL
                     var ScriptableAddWeapon = Weapon.GetComponent<CArmed>();
                     if( ScrtiptWeapon.GetWeaponName() != ScriptableAddWeapon.GetWeaponName())
                     {
-                        id++;
+                  
                         continue;
                     }
                     else
@@ -71,10 +71,25 @@ namespace DL
                         return;
                     }
                 }
-                //Debug.Log("Entra en agregar el arma");
-                CurrentWeapon = Spawn(gameObject.transform.position,Weapon);
+                if(weapons.Count <= 0)
+                {
+                    //CurrentWeapon.SetActive(false);
+                    selectedWeapon = 0;
+                    CurrentWeapon = Spawn(gameObject.transform.position,Weapon);
+                    CurrentWeapon.SetActive(true);
+                    //Debug.Log("Entra en agregar el arma");
+                    
                 //SelectWeapon(id);
-                selectedWeapon = id;
+                }
+                else
+                {
+                    //CurrentWeapon.SetActive(false);
+                    CurrentWeapon = Spawn(gameObject.transform.position, Weapon);
+                    selectedWeapon = transform.childCount - 1;
+                    SelectedWeapon();
+                    CurrentWeapon.SetActive(true);
+
+                }
             }
         }
         private void SelectedWeapon()
@@ -151,8 +166,10 @@ namespace DL
             if(Input.GetKeyDown(KeyCode.G))
             {
                 //Todo:Dropea el arma, probar
+
                 weapons.Remove(CurrentWeapon);
                 Destroy(CurrentWeapon);
+                SelectedWeapon();
             }
         }
         

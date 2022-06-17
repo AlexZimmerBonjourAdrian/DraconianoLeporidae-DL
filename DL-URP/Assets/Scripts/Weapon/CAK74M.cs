@@ -37,6 +37,7 @@ public class CAK74M : CArmed
     void Start()
     {
         LoadInfo();
+        _Shootposition = GetComponentInChildren<Transform>();
     }
 
     // Update is called once per frame

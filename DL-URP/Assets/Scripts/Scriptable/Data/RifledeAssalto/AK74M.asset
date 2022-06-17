@@ -20,11 +20,12 @@ MonoBehaviour:
   accuarcy: 0.6
   type_Weapon: RifleDeAssalto
   recoil: 1.5
-  offset: 0.7
+  offset: 0.3
   multidisparo: 0
   exparsion: 0
-  ammo_in_mag: 30
+  ammo_in_mag: 60
   extra_ammo: 400
   mag_size: 30
   damage: 80
   fire_rate: 0.8
+  distance: 100

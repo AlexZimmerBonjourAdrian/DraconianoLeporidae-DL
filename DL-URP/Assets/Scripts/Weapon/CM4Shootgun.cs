@@ -41,12 +41,13 @@ public class CM4Shootgun : CArmed
     public float range = 100f;
     //[SerializeField] private Camera cam;
 
-    [SerializeField] private Transform shootPosition;
+    [SerializeField] private Transform _Shootposition;
     // Start is called before the first frame update
     void Start()
     {
         //cam = Camera.main;
         LoadInfo();
+        _Shootposition = GetComponentInChildren<Transform>();
     }
 
     // Update is called once per frame
@@ -162,27 +163,27 @@ public class CM4Shootgun : CArmed
         muzzleInstance.transform.parent = spawnPoint;
 
         //Bulle that goes forward;
-        if(Physics.Raycast(shootPosition.position, shootPosition.forward, out hit,distance))
+        if(Physics.Raycast(_Shootposition.position, _Shootposition.forward, out hit,distance))
         {
             Instantiate(impact, hit.point, Quaternion.LookRotation(hit.normal));
 
             //Apply damage if you have a method that does it;
         }
-        if (Physics.Raycast(shootPosition.position, shootPosition.forward + new Vector3(-.2f, 0f,0f), out hit_1, distance))
+        if (Physics.Raycast(_Shootposition.position, _Shootposition.forward + new Vector3(-.2f, 0f,0f), out hit_1, distance))
         {
             Instantiate(impact, hit.point, Quaternion.LookRotation(hit_1.normal));
 
             //Apply damage if you have a method that does it;
 
         }
-        if (Physics.Raycast(shootPosition.position, shootPosition.forward + new Vector3(.0f, .1f, 0f), out hit_2, distance))
+        if (Physics.Raycast(_Shootposition.position, _Shootposition.forward + new Vector3(.0f, .1f, 0f), out hit_2, distance))
         {
             Instantiate(impact, hit.point, Quaternion.LookRotation(hit_2.normal));
 
             //Apply damage if you have a method that does it;
 
         }
-        if (Physics.Raycast(shootPosition.position, shootPosition.forward + new Vector3(0f, -1f, 0f), out hit_3, distance))
+        if (Physics.Raycast(_Shootposition.position, _Shootposition.forward + new Vector3(0f, -1f, 0f), out hit_3, distance))
         {
             Instantiate(impact, hit.point, Quaternion.LookRotation(hit_3.normal));
 

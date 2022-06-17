@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class CControllerWave : MonoBehaviour
 {
+    public enum SpawnState
+    {
+        SPAWNING, WAITING, COUNTING
+    };
 
    [SerializeField]
    public class wave
@@ -19,6 +23,8 @@ public class CControllerWave : MonoBehaviour
 
     public float timeBetweenWaves = 5f;
     public float WaveCountDown;
+
+    private SpawnState state = SpawnState.COUNTING;
 
     [SerializeField] private List<Transform> _List_Transform = new List<Transform>();
     
@@ -41,19 +47,48 @@ public class CControllerWave : MonoBehaviour
        
         if(WaveCountDown <= 0)
         {
-
-            Debug.Log("TODO: Continuar la Wave");
-            Debug.Log("https://www.youtube.com/watch?v=q0SBfDFn2Bs&ab_channel=Brackeys");
-               
+            if (state != SpawnState.SPAWNING)
+            {
+               StartCoroutine(SpawnWave(waves[nextWake]));
+            }
         }
-        
+        else
+        {
+            WaveCountDown -= Time.deltaTime;
+        }
+
+        //if(WaveCountDown <= 0)
+        //{
+
+        //    Debug.Log("TODO: Continuar la Wave");
+        //    Debug.Log("https://www.youtube.com/watch?v=q0SBfDFn2Bs&ab_channel=Brackeys");
+               
+        //}
+        Debug.Log("numero de ronda");
         //if (Input.GetKeyDown(KeyCode.Q)) 
         //{
         //    TestEnemyWaveSpawn();
         //}
     }
-    
+    IEnumerator SpawnWave(wave _wave)
+    {
+        state = SpawnState.SPAWNING;
 
+        for (int i = 0; i < _wave.count; i++)
+        {
+
+        }
+        //
+        state = SpawnState.WAITING;
+
+        yield break;
+    }
+    
+    void SpawnEnemy(Transform _enemy)
+    {
+        Debug.Log("Spawning Enemy: " + _enemy.name);
+
+    }
 
 
     public static CControllerWave Inst
@@ -104,7 +139,7 @@ public class CControllerWave : MonoBehaviour
         WaveNumber++;
         enemySpanwAmout += 2;
         enemiesKilled = 0;
-        for (int i = 0; i < enemySpanwAmout; i++)
+        for (int i = 0; i <= enemySpanwAmout; i++)
         {
             SpawnEnemy();
         }
@@ -120,7 +155,7 @@ public class CControllerWave : MonoBehaviour
         }
         else
         {
-            enemiesKilled++;
+            enemiesKilled+= 1;
         }
     }
 }
