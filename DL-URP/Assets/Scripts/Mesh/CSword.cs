@@ -6,6 +6,7 @@ using UnityEngine;
 public class CSword : MonoBehaviour
 {
 
+    //The number of vertices to create per frame
     private const int NUM_VERTICES = 12;
 
     [SerializeField]
@@ -37,8 +38,6 @@ public class CSword : MonoBehaviour
     [Tooltip("The amount of force applied to each side of a slice")]
     private float _forceAppliedToCut = 3f;
 
-
-
     private Mesh _mesh;
     private Vector3[] _vertices;
     private int[] _triangles;
@@ -49,11 +48,9 @@ public class CSword : MonoBehaviour
     private Vector3 _triggerEnterBasePosition;
     private Vector3 _triggerExitTipPosition;
 
-    
-
-    // Start is called before the first frame update
     void Start()
     {
+        //Init mesh and triangles
         _meshParent.transform.position = Vector3.zero;
         _mesh = new Mesh();
         _meshParent.GetComponent<MeshFilter>().mesh = _mesh;
@@ -69,17 +66,20 @@ public class CSword : MonoBehaviour
         _vertices = new Vector3[_trailFrameLength * NUM_VERTICES];
         _triangles = new int[_vertices.Length];
 
+        //Set starting position for tip and base
         _previousTipPosition = _tip.transform.position;
         _previousBasePosition = _base.transform.position;
-
     }
-    private void LateUpdate()
+
+    void LateUpdate()
     {
-        if(_frameCount == (_trailFrameLength * NUM_VERTICES))
+        //Reset the frame count one we reach the frame length
+        if (_frameCount == (_trailFrameLength * NUM_VERTICES))
         {
             _frameCount = 0;
         }
 
+        //Draw first triangle vertices for back and front
         _vertices[_frameCount] = _base.transform.position;
         _vertices[_frameCount + 1] = _tip.transform.position;
         _vertices[_frameCount + 2] = _previousTipPosition;
@@ -87,13 +87,15 @@ public class CSword : MonoBehaviour
         _vertices[_frameCount + 4] = _previousTipPosition;
         _vertices[_frameCount + 5] = _tip.transform.position;
 
+        //Draw fill in triangle vertices
         _vertices[_frameCount + 6] = _previousTipPosition;
         _vertices[_frameCount + 7] = _base.transform.position;
         _vertices[_frameCount + 8] = _previousBasePosition;
         _vertices[_frameCount + 9] = _previousTipPosition;
-        _vertices[_frameCount + 10] = _previousTipPosition;
+        _vertices[_frameCount + 10] = _previousBasePosition;
         _vertices[_frameCount + 11] = _base.transform.position;
 
+        //Set triangles
         _triangles[_frameCount] = _frameCount;
         _triangles[_frameCount + 1] = _frameCount + 1;
         _triangles[_frameCount + 2] = _frameCount + 2;
@@ -110,18 +112,16 @@ public class CSword : MonoBehaviour
         _mesh.vertices = _vertices;
         _mesh.triangles = _triangles;
 
+        //Track the previous base and tip positions for the next frame
         _previousTipPosition = _tip.transform.position;
         _previousBasePosition = _base.transform.position;
         _frameCount += NUM_VERTICES;
-
-
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        _triggerEnterTipPosition= _tip.transform.position;
+        _triggerEnterTipPosition = _tip.transform.position;
         _triggerEnterBasePosition = _base.transform.position;
-        
     }
 
     private void OnTriggerExit(Collider other)
@@ -163,5 +163,6 @@ public class CSword : MonoBehaviour
         Vector3 newNormal = transformedNormal + Vector3.up * _forceAppliedToCut;
         rigidbody.AddForce(newNormal, ForceMode.Impulse);
     }
-
 }
+
+

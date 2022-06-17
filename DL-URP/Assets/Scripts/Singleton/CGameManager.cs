@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CGameManager : MonoBehaviour
 {
+
 
     public static CGameManager Inst
     {
@@ -18,6 +20,7 @@ public class CGameManager : MonoBehaviour
         }
     }
     private static CGameManager _inst;
+    private AsyncOperation _currentLoadingScene;
 
     private void Awake()
     {
@@ -32,14 +35,44 @@ public class CGameManager : MonoBehaviour
         // _bulletList = new List<CGenericBullet>();
     }
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
-    void Update()
+    public void LateUpdate()
     {
-        
+        if(_currentLoadingScene != null)
+        {
+            _currentLoadingScene = null;
+        }
     }
+
+    public bool IsLoadingScene()
+    {
+        return _currentLoadingScene != null && !_currentLoadingScene.isDone;
+    }
+
+    public void LoadScene(int index)
+    {
+        SceneManager.LoadScene(index);
+    }
+
+    public void LoadScene(string name)
+    {
+        SceneManager.LoadScene(name);
+    }
+
+    public void LoadSceneAsync(string name)
+    {
+        _currentLoadingScene = SceneManager.LoadSceneAsync(name);
+    }
+
+    public void LoadSceneAsyncAdditive(string name)
+    {
+        _currentLoadingScene = SceneManager.LoadSceneAsync(name, LoadSceneMode.Additive);
+    }
+
+    public void Salir()
+    {
+        Application.Quit();
+    }
+
 }
