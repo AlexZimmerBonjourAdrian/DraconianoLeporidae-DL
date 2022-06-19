@@ -82,7 +82,7 @@ MonoBehaviour:
   - {fileID: 2075941784478994473}
   - {fileID: 2885579273716087761}
   m_RendererFeatureMap: e15c77d7b04e7b972e7e3081b5b1269229d042de0d3acf1cd1bb139d0fa30b28
-  m_UseNativeRenderPass: 0
+  m_UseNativeRenderPass: 1
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
   shaders:
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_AssetVersion: 1
   m_OpaqueLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2147483647
   m_TransparentLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -112,9 +112,9 @@ MonoBehaviour:
     failOperation: 0
     zFailOperation: 0
   m_ShadowTransparentReceive: 1
-  m_RenderingMode: 0
+  m_RenderingMode: 1
   m_DepthPrimingMode: 0
-  m_AccurateGbufferNormals: 0
+  m_AccurateGbufferNormals: 1
   m_ClusteredRendering: 0
   m_TileSize: 32
   m_IntermediateTextureMode: 1
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Active: 1
   settings:
-    WhenToApply: 550
+    WhenToApply: 1000
     inputTexture: {fileID: 0}
     renderToTexture: 0
     outputTexture: {fileID: 0}

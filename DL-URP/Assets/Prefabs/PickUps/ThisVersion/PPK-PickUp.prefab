@@ -26,6 +26,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -5.9604643e-10, y: 0.0038740826, z: -0.024977053}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8884793706055458856}
   m_RootOrder: 0
@@ -42,8 +43,8 @@ GameObject:
   - component: {fileID: 5540266847363985293}
   - component: {fileID: 7711864683301444423}
   - component: {fileID: 6451454008370142397}
-  - component: {fileID: 5369950215375970215}
   - component: {fileID: 1246736757448368921}
+  - component: {fileID: 981231637312732708}
   m_Layer: 0
   m_Name: PPK-PickUp
   m_TagString: Untagged
@@ -60,7 +61,8 @@ Transform:
   m_GameObject: {fileID: 8072403684912249490}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.097, y: 3.163, z: -5.987}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2142697249114362130}
   m_Father: {fileID: 0}
@@ -85,6 +87,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -131,19 +134,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &5369950215375970215
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8072403684912249490}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.024991155, y: 0.04747337, z: 0.09324785}
-  m_Center: {x: 0.0001308322, y: 0.00074991584, z: 0}
 --- !u!114 &1246736757448368921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,4 +148,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ManagerWeapon: {fileID: 0}
   _weapon: {fileID: 7584655278904760910, guid: 6677f518e7b29a74599e1bb55fad5cec, type: 3}
-  box: {fileID: 0}
+--- !u!65 &981231637312732708
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8072403684912249490}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1313411, y: 0.52930623, z: 1.3987178}
+  m_Center: {x: 0, y: 0, z: 0}

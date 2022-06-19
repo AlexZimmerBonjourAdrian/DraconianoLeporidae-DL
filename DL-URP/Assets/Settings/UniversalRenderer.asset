@@ -37,10 +37,10 @@ MonoBehaviour:
   m_AssetVersion: 1
   m_OpaqueLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 201
   m_TransparentLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 457
   m_DefaultStencilState:
     overrideStencilState: 0
     stencilReference: 0
@@ -90,45 +90,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9cede398fae4c65390e7dca49ec6df0, type: 3}
   m_Name: OilPaintingEffectURP
   m_EditorClassIdentifier: 
-  m_Active: 0
+  m_Active: 1
   settings:
-    WhenToApply: 550
+    WhenToApply: 600
     inputTexture: {fileID: 0}
     renderToTexture: 0
     outputTexture: {fileID: 0}
     outputMipmap: 0
-    EffectFade: 0.459
+    EffectFade: 0.507
     PanFade: 0
-    SrcBlur: 0.118
-    SrcBright: 0.871
+    SrcBlur: 0.177
+    SrcBright: 0.599
     SrcColor: 1.5
     SrcContrast: 1.5
-    BrushDetail: 0.823
-    BrushFill: 0.775
-    NumStrokes: 63057
-    Canvas: 0.181
-    ColorSpread: 0.483
-    FlickerFreq: 15
+    BrushDetail: 0.846
+    BrushFill: 0.906
+    NumStrokes: 39660
+    Canvas: 0.071
+    ColorSpread: 0.203
+    FlickerFreq: 26.1
     FlickerStrength: 0
-    LayerScale: 0.803
-    LightAng: 195
-    LightOffs: 52.7
-    PaintDiff: 0.15
+    LayerScale: 0.567
+    LightAng: 78
+    LightOffs: 86.1
+    PaintDiff: 0.314
     PaintShiny: 0.5
-    PaintSpec: 0
+    PaintSpec: 0.062
     StrokeAng: 0
     StrokeBend: -1
     StrokeContour: 1
     StrokeDir: 0
-    ScreenFOV: 0
+    ScreenFOV: 13.4
     MultiStroke: 3.3
     strokeSeed: 42153
     Vignette: 1
-    CanvasBg: 0.298
+    CanvasBg: 0.208
     CanvasTint: {r: 1, g: 1, b: 1, a: 1}
     flipY: 0
     geomFlipY: 0
-    HDRPGamma: 1
+    HDRPGamma: 0
 --- !u!114 &8582085226650113992
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7210046653612256288}
   - component: {fileID: 4145958724016141727}
   - component: {fileID: 6603060499012076466}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2885761025597767146}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShootTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 7584655278904760914}
   - component: {fileID: 7584655278904760915}
   - component: {fileID: 7584655278904760908}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ppk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,4 +285,4 @@ MonoBehaviour:
   randomRecoilConstraints: {x: 0, y: 0}
   recoilPattern: []
   range: 100
-  ShootPosition: {fileID: 0}
+  ShootPosition: {fileID: 2885761025597767146}

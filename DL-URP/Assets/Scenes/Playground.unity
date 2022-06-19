@@ -3737,6 +3737,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7783542492373588480, guid: b234eb389b67d3f479dd6850b21bb328, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7783542492373588480, guid: b234eb389b67d3f479dd6850b21bb328, type: 3}
       propertyPath: m_Constraints
       value: 0
       objectReference: {fileID: 0}
@@ -3899,6 +3903,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7775444675562080426, guid: b234eb389b67d3f479dd6850b21bb328, type: 3}
     - {fileID: 7775444677339386896, guid: b234eb389b67d3f479dd6850b21bb328, type: 3}
+    - {fileID: 7775444677339386899, guid: b234eb389b67d3f479dd6850b21bb328, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b234eb389b67d3f479dd6850b21bb328, type: 3}
 --- !u!1 &8618260086078336584 stripped
 GameObject:

@@ -49,7 +49,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2484253668891406529
 Transform:
   m_ObjectHideFlags: 0
@@ -171,4 +171,4 @@ MonoBehaviour:
   muzzle: {fileID: 0}
   impact: {fileID: 0}
   range: 100
-  shootPosition: {fileID: 4876990266097409810}
+  _Shootposition: {fileID: 4876990266097409810}

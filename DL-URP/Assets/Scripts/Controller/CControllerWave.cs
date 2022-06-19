@@ -45,17 +45,17 @@ public class CControllerWave : MonoBehaviour
     void Update()
     {
        
-        if(WaveCountDown <= 0)
-        {
-            if (state != SpawnState.SPAWNING)
-            {
-               StartCoroutine(SpawnWave(waves[nextWake]));
-            }
-        }
-        else
-        {
-            WaveCountDown -= Time.deltaTime;
-        }
+        //if(WaveCountDown <= 0)
+        //{
+        //    if (state != SpawnState.SPAWNING)
+        //    {
+        //       StartCoroutine(SpawnWave(waves[nextWake]));
+        //    }
+        //}
+        //else
+        //{
+        //    WaveCountDown -= Time.deltaTime;
+        //}
 
         //if(WaveCountDown <= 0)
         //{
@@ -64,7 +64,7 @@ public class CControllerWave : MonoBehaviour
         //    Debug.Log("https://www.youtube.com/watch?v=q0SBfDFn2Bs&ab_channel=Brackeys");
                
         //}
-        Debug.Log("numero de ronda");
+        //Debug.Log("numero de ronda");
         //if (Input.GetKeyDown(KeyCode.Q)) 
         //{
         //    TestEnemyWaveSpawn();
