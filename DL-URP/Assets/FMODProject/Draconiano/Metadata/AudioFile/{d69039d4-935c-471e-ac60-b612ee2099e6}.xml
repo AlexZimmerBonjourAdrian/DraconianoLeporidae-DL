@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{d69039d4-935c-471e-ac60-b612ee2099e6}">
+		<property name="assetPath">
+			<value>Rifle Gun Shot - QuickSounds.com.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.016</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c114e37f-1ddc-45f5-8d89-6b41d799b123}</destination>
+		</relationship>
+	</object>
+</objects>

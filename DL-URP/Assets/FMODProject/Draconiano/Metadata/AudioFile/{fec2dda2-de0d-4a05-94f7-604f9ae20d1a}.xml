@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{fec2dda2-de0d-4a05-94f7-604f9ae20d1a}">
+		<property name="assetPath">
+			<value>Saiga12 Shot Close - QuickSounds.com.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>36.359999999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c114e37f-1ddc-45f5-8d89-6b41d799b123}</destination>
+		</relationship>
+	</object>
+</objects>

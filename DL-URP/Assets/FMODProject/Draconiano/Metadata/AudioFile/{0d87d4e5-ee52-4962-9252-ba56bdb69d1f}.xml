@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{0d87d4e5-ee52-4962-9252-ba56bdb69d1f}">
+		<property name="assetPath">
+			<value>Submachine World War 2 Short Burst - QuickSounds.com.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.81599999999999995</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c114e37f-1ddc-45f5-8d89-6b41d799b123}</destination>
+		</relationship>
+	</object>
+</objects>

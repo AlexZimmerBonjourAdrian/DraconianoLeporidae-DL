@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{fb0ded05-d6ad-4d23-9246-a92dc2e40a4b}">
+		<property name="assetPath">
+			<value>Revolver Release Hammer - QuickSounds.com.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.432</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c114e37f-1ddc-45f5-8d89-6b41d799b123}</destination>
+		</relationship>
+	</object>
+</objects>

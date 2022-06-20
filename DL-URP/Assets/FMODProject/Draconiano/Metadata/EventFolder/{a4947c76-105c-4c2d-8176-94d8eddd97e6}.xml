@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EventFolder" id="{a4947c76-105c-4c2d-8176-94d8eddd97e6}">
+		<property name="name">
+			<value>CALICO</value>
+		</property>
+		<relationship name="folder">
+			<destination>{2b351101-d5f9-4892-a3e2-4102d3a5433d}</destination>
+		</relationship>
+	</object>
+</objects>

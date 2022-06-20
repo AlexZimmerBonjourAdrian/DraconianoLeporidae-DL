@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 public class CArmed : MonoBehaviour
 {
     //private weapon weapon_controller;
@@ -27,6 +28,17 @@ public class CArmed : MonoBehaviour
     [SerializeField] protected bool isCrossing = false;
     [SerializeField] protected LayerMask collision;
     [SerializeField] protected float distance = 100f;
+
+    [SerializeField] protected Transform muzzle;
+    [SerializeField] protected float msBetweenShots = 100;
+    [SerializeField] protected float muzzleVelocity = 35;
+
+    [SerializeField] protected Transform shell;
+    [SerializeField] protected Transform shellEjection;
+
+     [SerializeField] protected float nextShotTime;
+    [SerializeField] protected CMuzzleFlash muzzleFlash;
+
     //private Keyboard kb = Keyboard.current;
     //private Mouse ms = Mouse.current;
     //protected InputAction shoot;
@@ -64,8 +76,12 @@ public class CArmed : MonoBehaviour
 
     //    //shoot.performed += Shoot;
     //}
-
+    public void Start()
+    {
+        muzzleFlash = GetComponent<CMuzzleFlash>();
+    }
    
+
     public virtual string GetWeaponName()
     {
         return weapon_name;
@@ -106,7 +122,9 @@ public class CArmed : MonoBehaviour
     }
     public virtual void Shoot()
     {
-       
+
+      Instantiate(shell, shellEjection.position, shellEjection.rotation);
+      muzzleFlash.Activate();
        //if(type_Weapon == "Pistol" || type_Weapon == "Shootgun"|| type_Weapon == "Rifle" )
        // {
        //     if (Input.GetKeyDown(KeyCode.Mouse0))
