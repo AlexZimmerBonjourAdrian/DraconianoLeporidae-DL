@@ -84,8 +84,10 @@ public class CM4Shootgun : CArmed
     IEnumerator ShootGun()
     {
         RayCastForEne();
+        Shoot();
         yield return new WaitForSeconds(fire_rate);
         _canShoot = true;
+        
     }
 
     public override void Shoot()

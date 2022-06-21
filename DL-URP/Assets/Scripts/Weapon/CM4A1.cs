@@ -66,6 +66,7 @@ public class CM4A1 : CArmed
 
     IEnumerator ShootGun()
     {
+        Shoot();
         RayCastForEne();
         yield return new WaitForSeconds(fire_rate);
         _canShoot = true; 

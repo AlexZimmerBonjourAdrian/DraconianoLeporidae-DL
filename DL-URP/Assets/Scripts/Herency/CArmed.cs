@@ -33,10 +33,10 @@ public class CArmed : MonoBehaviour
     [SerializeField] protected float msBetweenShots = 100;
     [SerializeField] protected float muzzleVelocity = 35;
 
-    [SerializeField] protected Transform shell;
+    [SerializeField] protected GameObject shell;
     [SerializeField] protected Transform shellEjection;
 
-     [SerializeField] protected float nextShotTime;
+    [SerializeField] protected float nextShotTime;
     [SerializeField] protected CMuzzleFlash muzzleFlash;
 
     //private Keyboard kb = Keyboard.current;

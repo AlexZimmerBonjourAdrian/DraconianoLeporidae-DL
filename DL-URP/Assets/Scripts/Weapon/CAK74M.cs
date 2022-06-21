@@ -43,7 +43,7 @@ public class CAK74M : CArmed
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0) && _canShoot && ammo_in_mag > 0)
+        if (Input.GetKey(KeyCode.Mouse0) && _canShoot && ammo_in_mag > 0)
         {
             _canShoot = false;
             ammo_in_mag--;
@@ -131,9 +131,11 @@ public class CAK74M : CArmed
     }
     IEnumerator ShootGun()
     {
+        Shoot();
         RayCastForEne();
         yield return new WaitForSeconds(fire_rate);
         _canShoot = true;
+        
     }
 
     void RayCastForEne()

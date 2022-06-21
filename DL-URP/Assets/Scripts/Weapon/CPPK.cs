@@ -80,7 +80,7 @@ public class CPPK : CArmed
        //     }
        // }
 
-        if (Input.GetMouseButton(0) && _canShoot && ammo_in_mag > 0)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && _canShoot && ammo_in_mag > 0)
         {
             _canShoot = false;
             ammo_in_mag--;
@@ -206,6 +206,7 @@ public class CPPK : CArmed
     }
     IEnumerator Shootgun()
     {
+        Shoot();
         RayCastForEne();
         yield return new WaitForSeconds(fire_rate);
         _canShoot = true;
