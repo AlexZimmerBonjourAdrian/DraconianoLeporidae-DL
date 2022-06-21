@@ -42,43 +42,45 @@ public class CPPK : CArmed
 
     public void Start()
     {
-        
-       //_input = GetComponent<weapon_Input>();
+        transform.localPosition = new Vector3(0.625f, -0.385f, 0.122f);
+        //_input = GetComponent<weapon_Input>();
         _anim = GetComponent<Animator>();
+        _anim.Play("Idle");
         LoadInfo();
         _canShoot = true;
     }
     public void Update()
     {
-       //// Reload();
-       // Controller();
-       // if (Input.GetKeyDown(KeyCode.Mouse0) && _canShoot && ammo_in_mag > 0)
-       // {
-       //     _canShoot = false;
-       //     ammo_in_mag--;
-       //     StartCoroutine(Shootgun());
-       //     //Debug.Log("Entro Aqui");
-       //     //isShooting = true;
-       //     //_anim.SetBool("IsShooting", isShooting);
+        //// Reload();
+        // Controller();
+        // if (Input.GetKeyDown(KeyCode.Mouse0) && _canShoot && ammo_in_mag > 0)
+        // {
+        //     _canShoot = false;
+        //     ammo_in_mag--;
+        //     StartCoroutine(Shootgun());
+        //     //Debug.Log("Entro Aqui");
+        //     //isShooting = true;
+        //     //_anim.SetBool("IsShooting", isShooting);
 
-       // }
+        // }
 
-       // else if (Input.GetKeyUp(KeyCode.R) && ammo_in_mag < mag_size && extra_ammo > 0)
-       // {
-       //     //isReload = true;
-       //     ////_anim.SetBool("CanReload", isReload);
-       //     int amountNeeded = mag_size - ammo_in_mag;
-       //     if (amountNeeded >= _ammoInReserve)
-       //     {
-       //         ammo_in_mag += extra_ammo;
-       //         extra_ammo -= amountNeeded;
-       //     }
-       //     else
-       //     {
-       //         ammo_in_mag = mag_size;
-       //         extra_ammo -= amountNeeded;
-       //     }
-       // }
+        // else if (Input.GetKeyUp(KeyCode.R) && ammo_in_mag < mag_size && extra_ammo > 0)
+        // {
+        //     //isReload = true;
+        //     ////_anim.SetBool("CanReload", isReload);
+        //     int amountNeeded = mag_size - ammo_in_mag;
+        //     if (amountNeeded >= _ammoInReserve)
+        //     {
+        //         ammo_in_mag += extra_ammo;
+        //         extra_ammo -= amountNeeded;
+        //     }
+        //     else
+        //     {
+        //         ammo_in_mag = mag_size;
+        //         extra_ammo -= amountNeeded;
+        //     }
+        // }
+        ControllerAnimation();
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && _canShoot && ammo_in_mag > 0)
         {
@@ -104,41 +106,64 @@ public class CPPK : CArmed
         //Shoot();
     }
     [SerializeField] private Transform ShootPosition;
-    private void Controller()
+    public void ControllerAnimation()
     {
-        
+        if(Input.GetMouseButtonDown(0) && _canShoot && ammo_in_mag > 0)
+        {
+            _anim.SetBool("IsShooting", _canShoot);
+        }
+        else if(_canShoot == false)
+        {
+            _anim.SetBool("IsShooting", false);
+        }
+        else if (Input.GetKeyDown(KeyCode.R) && ammo_in_mag < mag_size && extra_ammo > 0)
+        {
+            _anim.SetBool("CanReload", true);
+        }
+        else if (Input.GetKeyUp(KeyCode.R))
+        {
+            _anim.SetBool("CanReload", false);
+        }
+        else if (Input.GetMouseButton(1))
+        {
+            _anim.SetBool("IsCrossing", true);
+        }
+        else if(Input.GetMouseButtonUp(1))
+        {
+            _anim.SetBool("IsCrossing", false);
+        }
         //Debug.DrawRay(transform.position, -transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
-     
-        //else if(this._anim.GetCurrentAnimatorStateInfo(0).IsName("Shoot"))
-        //{
-        //    _anim.SetBool("IsShooting", isShooting);
-        //}
-       
-        //if(Input.GetKey(KeyCode.Mouse1))
-        //{   
-        //    Debug.Log("Entra Aqui");
-        //    isCrossing = true;
-        //    _anim.SetBool("IsCrossing", true);
 
-        //    if (Input.GetKeyDown(KeyCode.Mouse0) )
-        //    {
-        //        RayCastForEne();
-        //        isShooting = true;
-        //        _anim.SetBool("IsShooting", isShooting);
-        //    }
-        //}
+            //else if(this._anim.GetCurrentAnimatorStateInfo(0).IsName("Shoot"))
+            //{
+            //    _anim.SetBool("IsShooting", isShooting);
+            //}
 
-        //else if(Input.GetKeyUp(KeyCode.Mouse1))
-        //{
-        //    //_anim.playbackTime("Crosshair");
-        //    _anim.StartPlayback();
-        //    isCrossing = false;
-        //    _anim.SetBool("IsCrossing", isCrossing);  
-        //}
-        
-        
+            //if(Input.GetKey(KeyCode.Mouse1))
+            //{   
+            //    Debug.Log("Entra Aqui");
+            //    isCrossing = true;
+            //    _anim.SetBool("IsCrossing", true);
 
-      
+            //    if (Input.GetKeyDown(KeyCode.Mouse0) )
+            //    {
+            //        RayCastForEne();
+            //        isShooting = true;
+            //        _anim.SetBool("IsShooting", isShooting);
+            //    }
+            //}
+
+            //else if(Input.GetKeyUp(KeyCode.Mouse1))
+            //{
+            //    //_anim.playbackTime("Crosshair");
+            //    _anim.StartPlayback();
+            //    isCrossing = false;
+            //    _anim.SetBool("IsCrossing", isCrossing);  
+            //}
+
+
+
+
     }
 
     public override void Shoot()
