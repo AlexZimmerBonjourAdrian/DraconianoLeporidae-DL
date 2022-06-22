@@ -108,7 +108,7 @@ public class CPPK : CArmed
     [SerializeField] private Transform ShootPosition;
     public void ControllerAnimation()
     {
-        if(Input.GetMouseButtonDown(0) && _canShoot && ammo_in_mag > 0)
+        if(Input.GetMouseButtonDown(0) && _canShoot && ammo_in_mag > 0 && isCrossing == false)
         {
             _anim.SetBool("IsShooting", _canShoot);
         }
@@ -116,7 +116,7 @@ public class CPPK : CArmed
         {
             _anim.SetBool("IsShooting", false);
         }
-        else if (Input.GetKeyDown(KeyCode.R) && ammo_in_mag < mag_size && extra_ammo > 0)
+        else if (Input.GetKeyDown(KeyCode.R) && ammo_in_mag < mag_size && extra_ammo > 0 )
         {
             _anim.SetBool("CanReload", true);
         }
@@ -124,47 +124,71 @@ public class CPPK : CArmed
         {
             _anim.SetBool("CanReload", false);
         }
-        else if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(1) )
         {
-            _anim.SetBool("IsCrossing", true);
+            isCrossing = true;
+            _anim.SetBool("IsCrossing", isCrossing);
+            if (Input.GetMouseButtonDown(0))
+            {
+                _anim.SetBool("IsShooting", _canShoot);
+            }
+            else if (_canShoot == false)
+            {
+                _anim.SetBool("IsShooting", false);
+            }
+            //_anim.SetBool("IsShooting", _canShoot);
         }
-        else if(Input.GetMouseButtonUp(1))
+        else if (Input.GetMouseButtonUp(1))
         {
-            _anim.SetBool("IsCrossing", false);
+            isCrossing = false;
+            _anim.SetBool("IsCrossing", isCrossing);
+
         }
+        //    //if(Input.GetMouseButtonDown(0))
+        //    //{
+        //    //    _anim.Play("ShootCrosshair");
+        //    //}       
+        //}
+        //else if(Input.GetMouseButtonUp(1))
+        //{
+        //    isCrossing = false;
+        //    _anim.SetBool("IsCrossing", isCrossing);       
+        //}
+
         //Debug.DrawRay(transform.position, -transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
 
-            //else if(this._anim.GetCurrentAnimatorStateInfo(0).IsName("Shoot"))
-            //{
-            //    _anim.SetBool("IsShooting", isShooting);
-            //}
+        //else if(this._anim.GetCurrentAnimatorStateInfo(0).IsName("Shoot"))
+        //{
+        //    _anim.SetBool("IsShooting", isShooting);
+        //}
 
-            //if(Input.GetKey(KeyCode.Mouse1))
-            //{   
-            //    Debug.Log("Entra Aqui");
-            //    isCrossing = true;
-            //    _anim.SetBool("IsCrossing", true);
+        //if(Input.GetKey(KeyCode.Mouse1))
+        //{   
+        //    Debug.Log("Entra Aqui");
+        //    isCrossing = true;
+        //    _anim.SetBool("IsCrossing", true);
 
-            //    if (Input.GetKeyDown(KeyCode.Mouse0) )
-            //    {
-            //        RayCastForEne();
-            //        isShooting = true;
-            //        _anim.SetBool("IsShooting", isShooting);
-            //    }
-            //}
+        //    if (Input.GetKeyDown(KeyCode.Mouse0) )
+        //    {
+        //        RayCastForEne();
+        //        isShooting = true;
+        //        _anim.SetBool("IsShooting", isShooting);
+        //    }
+        //}
 
-            //else if(Input.GetKeyUp(KeyCode.Mouse1))
-            //{
-            //    //_anim.playbackTime("Crosshair");
-            //    _anim.StartPlayback();
-            //    isCrossing = false;
-            //    _anim.SetBool("IsCrossing", isCrossing);  
-            //}
+        //else if(Input.GetKeyUp(KeyCode.Mouse1))
+        //{
+        //    //_anim.playbackTime("Crosshair");
+        //    _anim.StartPlayback();
+        //    isCrossing = false;
+        //    _anim.SetBool("IsCrossing", isCrossing);  
+        //}
 
 
 
 
     }
+ 
 
     public override void Shoot()
     {
@@ -229,6 +253,23 @@ public class CPPK : CArmed
     {
         base.Desequip();
     }
+    //IEnumerable ShootCrosshair()
+    //{
+    //    _anim.Play("ShootCrosshair");
+    //    yield return new WaitForSeconds(fire_rate);
+    //    _anim.Play("")
+
+    //}
+
+    //void DetermineAim()
+    //{
+    //    Vector3 target = normalLocalPosition;
+    //    if (Input.GetMouseButton(1)) 
+
+    //    Vector3 desiredPosition = Vector3.Lerp(transform.localPosition, target, Time.deltaTime * aimSmoothing);
+
+    //    transform.localPosition = desiredPosition;
+    //}
     IEnumerator Shootgun()
     {
         Shoot();

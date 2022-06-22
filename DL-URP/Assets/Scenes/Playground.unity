@@ -2027,6 +2027,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AK47
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 468961877aae9a84586131be7094a8be, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 468961877aae9a84586131be7094a8be, type: 3}
 --- !u!1 &1679167874 stripped
@@ -2375,6 +2379,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6a249dab84bbeee4fb14bedf546e7cbe, type: 3}
       propertyPath: m_Name
       value: ace
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6a249dab84bbeee4fb14bedf546e7cbe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a249dab84bbeee4fb14bedf546e7cbe, type: 3}

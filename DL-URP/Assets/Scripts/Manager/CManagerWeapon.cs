@@ -154,7 +154,7 @@ namespace DL
             obj.transform.parent = gameObject.transform;
             weapons.Add(obj);
             obj.transform.localEulerAngles= Vector3.zero;
-            obj.transform.localPosition = new Vector3(0.625f, -0.385f, 0.122f);
+            obj.transform.localPosition = new Vector3(0f, -0.131f, 0.122f);
             CArmed newWeapon = obj.GetComponent<CArmed>();
             _ListHaveWeapon.Add(newWeapon);
 
