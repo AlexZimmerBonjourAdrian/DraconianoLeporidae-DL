@@ -32,9 +32,9 @@ public class CPPK : CArmed
     public Vector2 randomRecoilConstraints;
     //you only need to assign this if randomizeRecoil if off
     public Vector2[] recoilPattern;
+
+    [SerializeField]public LayerMask maskEnemy;
     
-
-
     //private weapon_Input _input;
     private Animator _anim;
 
@@ -42,12 +42,14 @@ public class CPPK : CArmed
 
     public void Start()
     {
-        transform.localPosition = new Vector3(0.625f, -0.385f, 0.122f);
+        transform.localPosition = new Vector3(0.500f, -0.315f, 0.122f);
+        marketUI = GameObject.Find("Crosshair");
         //_input = GetComponent<weapon_Input>();
         _anim = GetComponent<Animator>();
         _anim.Play("Idle");
         LoadInfo();
         _canShoot = true;
+       
     }
     public void Update()
     {
@@ -118,7 +120,9 @@ public class CPPK : CArmed
         }
         else if (Input.GetKeyDown(KeyCode.R) && ammo_in_mag < mag_size && extra_ammo > 0 )
         {
+            _anim.SetBool("IsCrossing", false);
             _anim.SetBool("CanReload", true);
+          
         }
         else if (Input.GetKeyUp(KeyCode.R))
         {
@@ -128,7 +132,7 @@ public class CPPK : CArmed
         {
             isCrossing = true;
             _anim.SetBool("IsCrossing", isCrossing);
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetKeyDown(KeyCode.Mouse0) && _canShoot && ammo_in_mag > 0)
             {
                 _anim.SetBool("IsShooting", _canShoot);
             }
@@ -281,15 +285,16 @@ public class CPPK : CArmed
     void RayCastForEne()
     {
         RaycastHit hit;
-        if (Physics.Raycast(ShootPosition.position, ShootPosition.forward * 1000, out hit, 1 << LayerMask.NameToLayer("enemy")))
+        if (Physics.Raycast(ShootPosition.position, ShootPosition.TransformDirection(Vector3.forward), out hit,Mathf.Infinity,maskEnemy))
         {
             try
             {
                 Debug.Log("Hit an Enemy");
+                marketUI.GetComponent<CHitmarket>().Hit();
                 //Rigidbody rb = hit.transform.GetComponent<Rigidbody>();
                 //rb.constraints = RigidbodyConstraints.None;
                 //rb.AddForce(transform.parent.transform.forward * 500);
-                hit.collider.gameObject.GetComponent<CMafioso>().TakeDamage(damage);
+                hit.collider.gameObject.GetComponent<CMafioso>().DestroyEnemy();
                  Debug.Log(hit.collider.gameObject.GetComponent<CMafioso>().Hearth);
                 Debug.DrawRay(transform.position, transform.forward, Color.red);
             }

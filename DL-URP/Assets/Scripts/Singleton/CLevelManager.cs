@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class CLevelManager : MonoBehaviour
 {
-
+    public GameObject DeathScreen;
+    
+    private static CLevelManager _inst;
     public static CLevelManager Inst
     {
         get
@@ -17,7 +19,7 @@ public class CLevelManager : MonoBehaviour
             return _inst;
         }
     }
-    private static CLevelManager _inst;
+   
     private void Awake()
     {
         if (_inst != null && _inst != this)
@@ -31,6 +33,25 @@ public class CLevelManager : MonoBehaviour
         // _bulletList = new List<CGenericBullet>();
     }
     // Start is called before the first frame update
-   
+    private void Start()
+    {
+        
+        DeathScreen = GameObject.Find("DeathScreen");
+    }
+
+    //La solucion mas dificil pero puede que mas rapida en performance
+    //Respaldo 
+    //public void ResetButDontLoadLevel()
+    //{
+
+    //}
+    //La forma no se si mas barata pero si comun
+    public void ResetLoadLevel()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        CGameManager.Inst.LoadScene(scene.name);
+        CControllerWave.Inst.StartWave();
+    }
+    //public void Respawn()
 
 }

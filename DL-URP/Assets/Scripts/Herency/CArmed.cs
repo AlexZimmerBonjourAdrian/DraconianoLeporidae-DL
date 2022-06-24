@@ -38,7 +38,7 @@ public class CArmed : MonoBehaviour
 
     [SerializeField] protected float nextShotTime;
     [SerializeField] protected CMuzzleFlash muzzleFlash;
-
+    [SerializeField] public GameObject marketUI;
     //private Keyboard kb = Keyboard.current;
     //private Mouse ms = Mouse.current;
     //protected InputAction shoot;
@@ -202,7 +202,7 @@ public class CArmed : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
-
+    
     public void DebugLog()
     {
         Debug.Log(weapon_name);

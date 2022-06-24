@@ -143,6 +143,7 @@ public class CM4A1 : CArmed
             {
 
                 Debug.Log("Hit an Enemy");
+                marketUI.GetComponent<CHitmarket>().Hit();
                 //Rigidbody rb = hit.transform.GetComponent<Rigidbody>();
                 //rb.constraints = RigidbodyConstraints.None;
                 //rb.AddForce(transform.parent.transform.forward * 500);

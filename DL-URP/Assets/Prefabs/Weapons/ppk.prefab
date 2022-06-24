@@ -269,7 +269,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6734123308625167730}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.11, y: 4.13, z: 4.71}
+  m_LocalPosition: {x: -7.85, y: 4.43, z: 2.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -417,6 +417,7 @@ MonoBehaviour:
   mag_size: 0
   damage: 10
   fire_rate: 1
+  isShooting: 0
   isReload: 0
   isCrossing: 0
   collision:
@@ -430,6 +431,7 @@ MonoBehaviour:
   shellEjection: {fileID: 5619477190379117387}
   nextShotTime: 1
   muzzleFlash: {fileID: 6098649324413030261}
+  marketUI: {fileID: 0}
   fireRate: 0.2
   _canShoot: 0
   flashes: []
@@ -442,6 +444,9 @@ MonoBehaviour:
   randomizeRecoil: 0
   randomRecoilConstraints: {x: 0, y: 0}
   recoilPattern: []
+  maskEnemy:
+    serializedVersion: 2
+    m_Bits: 64
   range: 100
   ShootPosition: {fileID: 2885761025597767146}
 --- !u!114 &6098649324413030261

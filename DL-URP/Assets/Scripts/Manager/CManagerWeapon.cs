@@ -12,10 +12,10 @@ namespace DL
         //{
             
         //}
-        private GameObject[] _allWeapon = new GameObject[1];
+        private GameObject[] _allWeapon = new GameObject[4];
         [SerializeField] private List<GameObject> _allWeaponAssets;
-        private List<GameObject> weapons = new List<GameObject>();
-        private GameObject[] auto_spawn_weapon = new GameObject[1];
+        [SerializeField]private List<GameObject> weapons = new List<GameObject>();
+        [SerializeField] private GameObject[] auto_spawn_weapon = new GameObject[4];
         private List<CArmed> _ListHaveWeapon = new List<CArmed>();
         [SerializeField]private Transform[] _tranformSlot = new Transform[2];
         private int selectedWeapon = 0;
@@ -32,13 +32,11 @@ namespace DL
         private void Awake()
         {
             //Auto Preset Prefab
-            _allWeapon[0] = Resources.Load("Assets/Prefabs/Weapons/ppk.prefab") as GameObject;
-            auto_spawn_weapon[0] = Resources.Load("Assets/Prefabs/Weapons/ppk.prefab") as GameObject;
-            
-        }
-        private void Start()
-        {
-            
+            _allWeapon[0] = Resources.Load<GameObject>("Assets/Prefabs/Weapons/ppk.prefab");
+            _allWeapon[1] = Resources.Load<GameObject>("Assets/Prefabs/Weapons/PlayHolderWeapon/AK74M.prefab");
+            _allWeapon[2] = Resources.Load<GameObject>("Assets/Prefabs/Weapons/PlayHolderWeapon/M4A1.prefab");
+            _allWeapon[3] = Resources.Load<GameObject>("Assets/Prefabs/Weapons/PlayHolderWeapon/M4Shootgun.prefab");
+
         }
         public void Update()
         {
@@ -49,8 +47,10 @@ namespace DL
          }
             EquipWeapon();
             //SelectedWeapon();
+
             GetWeaponArray();
             DropWeapon();
+            NotCurrentWeapon();
         }
         
         public void AddWeapon(GameObject Weapon)
@@ -105,23 +105,6 @@ namespace DL
 
             }
         }
-        // Probar
-        //public GameObject SelectWeapon(int ind)
-        //{
-        //    index = ind;
-        //    GameObject w;
-        //    for (int i= ind; i>=index;i++)
-        //    {
-        //       // Desequiped();
-        //       w  = weapons[index];
-        //        CurrentWeapon = w;
-        //       // Equipped();
-        //        return w;
-        //    }
-
-        //    return null;
-        //}
-        
         private void EquipWeapon()
         {
             int previousSelectedWeapon = selectedWeapon;
@@ -172,7 +155,13 @@ namespace DL
                 SelectedWeapon();
             }
         }
-        
+        public void NotCurrentWeapon()
+        {
+            if(Input.GetKeyDown(KeyCode.Mouse0) && weapons.Count <= 0)
+            {
+                AutoSpawn();  
+            }
+        }
         private void Desequiped()
         {
             CurrentWeapon.SetActive(false);
@@ -194,30 +183,12 @@ namespace DL
                 Debug.Log(w.name);
             }
         }
-        //public static CManagerWeapon Inst
-        //{
-        //    get
-        //    {
-        //        if (_inst == null)
-        //        {
-        //            GameObject obj = new GameObject("WeapontManager");
-        //            return obj.AddComponent<CManagerWeapon>();
-        //        }
-        //        return _inst;
-        //    }
-        //}
-        //private static CManagerWeapon _inst;
-        //private void Awake()
-        //{
-        //    if (_inst != null && _inst != this)
-        //    {
-        //        Destroy(gameObject);
-        //        return;
-        //    }
-        //    DontDestroyOnLoad(this.gameObject);
-        //    _inst = this;
-        //_bulletAsset = Resources.Load<GameObject>("GenericBullet");
-        // _bulletList = new List<CGenericBullet>();
+        
+        private void AutoSpawn()
+        {
+            int autoSpawn = Random.Range(0, auto_spawn_weapon.Length);
+            AddWeapon(auto_spawn_weapon[autoSpawn]);
+        }
 
     }
 }

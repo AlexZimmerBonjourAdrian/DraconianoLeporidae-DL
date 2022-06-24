@@ -31,7 +31,7 @@ public class CManagerEnemy : MonoBehaviour
             return;
         }
 
-        DontDestroyOnLoad(this.gameObject);
+        //DontDestroyOnLoad(this.gameObject);
         _inst = this;
     }
 

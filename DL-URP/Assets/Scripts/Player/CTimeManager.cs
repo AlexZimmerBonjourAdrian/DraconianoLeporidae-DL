@@ -20,8 +20,11 @@ public class CTimeManager : MonoBehaviour
         }
         else
         {
+            if(CPauseMenu.GameIsPaused == false)
+            { 
             Time.timeScale += (1f / slowdownLength) * Time.unscaledDeltaTime;
             Time.timeScale = Mathf.Clamp(Time.timeScale, 0, 1f);
+            }
         }
     }
 
