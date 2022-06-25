@@ -23,6 +23,8 @@ public class CM4A1 : CArmed
     public Vector2 randomRecoilContraints;
     public Vector2[] recoilPattern;
 
+    [SerializeField] public LayerMask maskEnemy;
+
     [SerializeField] private Transform _spawnShooter;
 
 
@@ -30,13 +32,15 @@ public class CM4A1 : CArmed
     void Start()
     {
         _canShoot = true;
+        marketUI = GameObject.Find("Crosshair");
+
         LoadInfo();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && _canShoot && ammo_in_mag > 0)
+        if (Input.GetKey(KeyCode.Mouse0) && _canShoot && ammo_in_mag > 0)
         {
             for (int i = 0; i <= 2; i++)
             {
@@ -137,26 +141,23 @@ public class CM4A1 : CArmed
     void RayCastForEne()
     {
         RaycastHit hit;
-        if (Physics.Raycast(_spawnShooter.position, _spawnShooter.forward, out hit, 1 << LayerMask.NameToLayer("enemy")))
-        {
+        if (Physics.Raycast(_spawnShooter.position, _spawnShooter.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, maskEnemy))
+         {
             try
             {
-
                 Debug.Log("Hit an Enemy");
                 marketUI.GetComponent<CHitmarket>().Hit();
                 //Rigidbody rb = hit.transform.GetComponent<Rigidbody>();
                 //rb.constraints = RigidbodyConstraints.None;
                 //rb.AddForce(transform.parent.transform.forward * 500);
                 hit.collider.gameObject.GetComponent<CMafioso>().TakeDamage(damage);
-                Debug.Log(hit.collider.gameObject.GetComponent<CMafioso>().Hearth);
-                Debug.DrawRay(_spawnShooter.position, _spawnShooter.forward, Color.red);
+                //Debug.Log(hit.collider.gameObject.GetComponent<CMafioso>().Hearth);
+                //Debug.DrawRay(_spawnShooter.position, _spawnShooter.forward, Color.red);
             }
             catch
             {
 
             }
-
-
         }
     }
 }

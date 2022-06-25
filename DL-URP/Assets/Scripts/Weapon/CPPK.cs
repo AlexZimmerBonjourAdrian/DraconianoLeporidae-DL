@@ -39,7 +39,7 @@ public class CPPK : CArmed
     private Animator _anim;
 
     public float range = 100f;
-
+    
     public void Start()
     {
         transform.localPosition = new Vector3(0.500f, -0.315f, 0.122f);
@@ -281,7 +281,7 @@ public class CPPK : CArmed
         yield return new WaitForSeconds(fire_rate);
         _canShoot = true;
     }
-
+    
     void RayCastForEne()
     {
         RaycastHit hit;
@@ -294,9 +294,9 @@ public class CPPK : CArmed
                 //Rigidbody rb = hit.transform.GetComponent<Rigidbody>();
                 //rb.constraints = RigidbodyConstraints.None;
                 //rb.AddForce(transform.parent.transform.forward * 500);
-                hit.collider.gameObject.GetComponent<CMafioso>().DestroyEnemy();
-                 Debug.Log(hit.collider.gameObject.GetComponent<CMafioso>().Hearth);
-                Debug.DrawRay(transform.position, transform.forward, Color.red);
+                hit.collider.gameObject.GetComponent<CMafioso>().TakeDamage(damage);
+                //Debug.Log(hit.collider.gameObject.GetComponent<CMafioso>().Hearth);
+                //Debug.DrawRay(transform.position, transform.forward, Color.red);
             }
             catch
             {

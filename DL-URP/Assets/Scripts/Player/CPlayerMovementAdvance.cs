@@ -69,6 +69,59 @@ public class CPlayerMovementAdvance : MonoBehaviour
     //public TextMeshProUGUI text_speed;
     //public TextMeshProUGUI text_mode;
 
+    public void SetWalkSpeed(float WalkSpeed)
+    {
+        walkSpeed = WalkSpeed;
+    }
+
+    public void SetSprintSpeed(float SprintSpeed)
+    {
+        sprintSpeed = SprintSpeed;
+    }
+    public void SetSpeedIncreaseMultiplier(float SpeedIncreaseMultiplier)
+    {
+        speedIncreaseMultiplier = SpeedIncreaseMultiplier;
+    }
+    public void SetSlopeIncreaseMultiplier(float SlopeIncreaseMultiplier)
+    {
+        slopeIncreaseMultiplier = SlopeIncreaseMultiplier;
+    }
+
+    public void SetGroundDrag(float GroundDrag)
+    {
+        groundDrag = GroundDrag;
+    }
+
+    public void SetjumpForce(float JumpForce)
+    {
+        jumpForce = JumpForce;
+    }
+
+    public void SetjumpColddown(float JumpCooldown)
+    {
+        jumpCooldown = JumpCooldown;
+    }
+
+    public void SetairMultiplier(float AirMultiplier)
+    {
+        airMultiplier = AirMultiplier;
+    }
+
+    public void SetCrounchSpeed(float CrouchSpeed)
+    {
+        crouchSpeed = CrouchSpeed;
+    }
+
+    public void SetCrouchYScale(float CrouchYScale)
+    {
+        crouchYScale = CrouchYScale;
+    }
+
+    public void SetMaxSlopeAngle(float MaxSlopeAngle)
+    {
+        maxSlopeAngle = MaxSlopeAngle;
+    }
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();

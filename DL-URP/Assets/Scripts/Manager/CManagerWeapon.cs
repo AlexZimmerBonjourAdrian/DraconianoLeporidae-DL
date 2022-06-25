@@ -5,7 +5,7 @@ namespace DL
 {
     public class CManagerWeapon : MonoBehaviour
     {
-
+        public GameObject AmmoUI;
 
        //Crear una estructura para agregar los datos de las armas 
         //private struct Weapon
@@ -38,6 +38,10 @@ namespace DL
             _allWeapon[3] = Resources.Load<GameObject>("Assets/Prefabs/Weapons/PlayHolderWeapon/M4Shootgun.prefab");
 
         }
+        private void Start()
+        {
+            AmmoUI = GameObject.Find("AmmoUi");
+        }
         public void Update()
         {
            for(int i = weapons.Count -1; i>= 0; i--)
@@ -51,6 +55,7 @@ namespace DL
             GetWeaponArray();
             DropWeapon();
             NotCurrentWeapon();
+            UpdateAmmo();
         }
         
         public void AddWeapon(GameObject Weapon)
@@ -190,5 +195,19 @@ namespace DL
             AddWeapon(auto_spawn_weapon[autoSpawn]);
         }
 
+        public void UpdateAmmo()
+        {
+            if (CurrentWeapon != null)
+            {
+                AmmoUI.GetComponent<CAmmoCotroller>().SetAmmo(CurrentWeapon.GetComponent<CArmed>().ammo_in_mag);
+                AmmoUI.GetComponent<CAmmoCotroller>().SetExtraAmmo(CurrentWeapon.GetComponent<CArmed>().extra_ammo);
+            }
+            else
+            {
+                AmmoUI.GetComponent<CAmmoCotroller>().SetAmmo(0);
+                AmmoUI.GetComponent<CAmmoCotroller>().SetExtraAmmo(0);
+            }
+      
+        }
     }
 }

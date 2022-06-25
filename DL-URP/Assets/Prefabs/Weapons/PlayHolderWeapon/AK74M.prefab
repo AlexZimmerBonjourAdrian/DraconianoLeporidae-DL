@@ -143,11 +143,11 @@ MonoBehaviour:
   offset: 1
   multidisparo: 0
   exparsion: 1
-  ammo_in_mag: 15
-  extra_ammo: 30
-  mag_size: 0
+  ammo_in_mag: 30
+  extra_ammo: 120
+  mag_size: 30
   damage: 10
-  fire_rate: 1
+  fire_rate: 0.4
   isShooting: 0
   isReload: 0
   isCrossing: 0
@@ -162,6 +162,7 @@ MonoBehaviour:
   shellEjection: {fileID: 735427123886103259}
   nextShotTime: 0.5
   muzzleFlash: {fileID: 2832601355428935155}
+  marketUI: {fileID: 0}
   _canShoot: 0
   normalLocapPoition: {x: 0, y: 0, z: 0}
   aimIngLocalPosition: {x: 0, y: 0, z: 0}
@@ -174,6 +175,9 @@ MonoBehaviour:
   recoilPattern: []
   _Shootposition: {fileID: 6127140901317403148}
   range: 30
+  maskEnemy:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &2832601355428935155
 MonoBehaviour:
   m_ObjectHideFlags: 0

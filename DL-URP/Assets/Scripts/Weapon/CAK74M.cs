@@ -28,7 +28,7 @@ public class CAK74M : CArmed
     [SerializeField] private Transform _Shootposition; 
     [SerializeField] private float range = 30;
 
-
+    [SerializeField] public LayerMask maskEnemy;
     //Weapon Recoil
 
 
@@ -36,12 +36,14 @@ public class CAK74M : CArmed
     // Start is called before the first frame update
     void Start()
     {
+        _canShoot = true;
         LoadInfo();
         _Shootposition = GetComponentInChildren<Transform>();
+        marketUI = GameObject.Find("Crosshair");
     }
 
     // Update is called once per frame
-    void Update()
+     void Update()
     {
         if (Input.GetKey(KeyCode.Mouse0) && _canShoot && ammo_in_mag > 0)
         {
@@ -53,7 +55,7 @@ public class CAK74M : CArmed
         else if (Input.GetKeyDown(KeyCode.R) && ammo_in_mag < mag_size && extra_ammo > 0)
         {
             int amoutNeeded = mag_size - ammo_in_mag;
-            if(amoutNeeded >= extra_ammo)
+            if (amoutNeeded >= extra_ammo)
             {
                 ammo_in_mag += extra_ammo;
                 extra_ammo -= amoutNeeded;
@@ -63,7 +65,7 @@ public class CAK74M : CArmed
                 ammo_in_mag = mag_size;
                 extra_ammo -= amoutNeeded;
             }
-        } 
+        }
     }
 
     public override void Shoot()
@@ -138,10 +140,10 @@ public class CAK74M : CArmed
         
     }
 
-    void RayCastForEne()
+    public void RayCastForEne()
     {
         RaycastHit hit;
-        if (Physics.Raycast(_Shootposition.position, transform.forward, out hit, 1 << LayerMask.NameToLayer("enemy")))
+        if (Physics.Raycast(_Shootposition.position, _Shootposition.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, maskEnemy))
         {
             try
             {
@@ -150,7 +152,8 @@ public class CAK74M : CArmed
                 //Rigidbody rb = hit.transform.GetComponent<Rigidbody>();
                 //rb.constraints = RigidbodyConstraints.None;
                 //rb.AddForce(transform.parent.transform.forward * 500);
-                hit.collider.gameObject.GetComponent<CMafioso>().DestroyEnemy();
+                marketUI.GetComponent<CHitmarket>().Hit();
+                hit.collider.gameObject.GetComponent<CMafioso>().TakeDamage(damage);
                 // Debug.Log(hit.collider.gameObject.GetComponent<CMafioso>().Hearth);
                 Debug.DrawRay(_Shootposition.position, transform.forward, Color.red);
             }

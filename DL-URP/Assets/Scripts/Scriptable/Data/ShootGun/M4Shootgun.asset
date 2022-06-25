@@ -25,6 +25,7 @@ MonoBehaviour:
   exparsion: 0.85
   ammo_in_mag: 7
   extra_ammo: 40
-  mag_size: 32
+  mag_size: 7
   damage: 55
-  fire_rate: 0.65
+  fire_rate: 0.2
+  distance: 100

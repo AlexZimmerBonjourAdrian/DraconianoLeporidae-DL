@@ -161,8 +161,9 @@ MonoBehaviour:
   shellEjection: {fileID: 0}
   nextShotTime: 0
   muzzleFlash: {fileID: 0}
+  marketUI: {fileID: 0}
   spawnPoint: {fileID: 0}
-  fireRate: 0.1
+  fireRate: 0.3
   clipSize: 30
   reservedAmmoCapacity: 270
   _canShoot: 0
@@ -180,6 +181,9 @@ MonoBehaviour:
   muzzle: {fileID: 0}
   impact: {fileID: 0}
   range: 100
+  maskEnemy:
+    serializedVersion: 2
+    m_Bits: 64
   _Shootposition: {fileID: 4876990266097409810}
 --- !u!1 &3082806155769648541
 GameObject:

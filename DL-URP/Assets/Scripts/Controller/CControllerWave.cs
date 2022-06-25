@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class CControllerWave : MonoBehaviour
 {
     public enum SpawnState
@@ -9,8 +10,9 @@ public class CControllerWave : MonoBehaviour
         SPAWNING, WAITING, COUNTING
     };
 
-   [SerializeField]
-   public class wave
+   
+    [System.Serializable]
+    public class wave
     {
         public string name;
         public Transform enemy;
@@ -18,11 +20,11 @@ public class CControllerWave : MonoBehaviour
         public float rate;
     }
 
-    public wave[] waves;
+     public wave[] waves;
     private int nextWave = 0;
-    public Transform[] spawnPoints;
-    public float timeBetweenWaves = 5f;
-    public float WaveCountDown;
+    [SerializeField] public Transform[] spawnPoints;
+    [SerializeField] public float timeBetweenWaves = 5f;
+    [SerializeField] public float WaveCountDown;
 
     private SpawnState state = SpawnState.COUNTING;
     private int enemySpawning;
@@ -32,8 +34,7 @@ public class CControllerWave : MonoBehaviour
     public int enemiesKilled;
     private int enemySpanwAmout = 2;
     private float searchCountdown = 1f;
-
-
+    [SerializeField] private GameObject WaveUi; 
     [SerializeField] private List<Transform> _List_Transform = new List<Transform>();
     void Start()
     {
@@ -46,7 +47,7 @@ public class CControllerWave : MonoBehaviour
         WaveCountDown = timeBetweenWaves;
         enemySpanwAmout = 2;
 
-        StartWave();
+        //StartWave();
     }
     private void Awake()
     {
@@ -133,7 +134,7 @@ public class CControllerWave : MonoBehaviour
         if (searchCountdown <= 0f)
         {
             searchCountdown = 1f;
-            if (GameObject.FindGameObjectsWithTag("Enemy") == null)
+            if (GameObject.FindGameObjectsWithTag("enemy") == null)
             {
                 return false;
             }
@@ -204,6 +205,7 @@ public class CControllerWave : MonoBehaviour
         
     }
 
+  
     
     private void NextWave()
     {
@@ -216,19 +218,19 @@ public class CControllerWave : MonoBehaviour
         }
     }
 
-    public void KilledEnemy()
-    {
+    //public void KilledEnemy()
+    //{
         
        
-        if(enemiesKilled >= enemySpanwAmout)
-        {
-            NextWave();
-        }
-        else
-        {
-            enemiesKilled+= 1;
-        }
-    }
+    //    if(enemiesKilled >= enemySpanwAmout)
+    //    {
+    //        NextWave();
+    //    }
+    //    else
+    //    {
+    //        enemiesKilled+= 1;
+    //    }
+    //}
 }
    //private void TestEnemyWaveSpawn()
    // {

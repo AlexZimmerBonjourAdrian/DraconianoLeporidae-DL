@@ -24,6 +24,19 @@ public class CSlide : MonoBehaviour
     private float horizontalInput;
     private float verticalInput;
 
+
+    public void SetMaxSlideTime(float MaxSlideTine)
+    {
+        maxSlideTime = MaxSlideTine;
+    }
+    public void SetSlideForce(float SlideForce)
+    {
+        slideForce = SlideForce;
+    }
+    public void SetSlideYScale(float SlideYScale)
+    {
+        slideYScale = SlideYScale;
+    }
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -92,4 +105,6 @@ public class CSlide : MonoBehaviour
 
         playerObj.localScale = new Vector3(playerObj.localScale.x, startYScale, playerObj.localScale.z);
     }
+
+   
 }

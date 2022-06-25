@@ -177,7 +177,7 @@ public class CMafioso : MonoBehaviour
                 Debug.Log("Estado Shoot Player");
                 break;
             case (int)states.STATE_DEAD:
-                CControllerWave.Inst.KilledEnemy();
+                //CControllerWave.Inst.KilledEnemy();
                 Invoke(nameof(DestroyEnemy), 0.1f);
                 break;
             case (int)states.STATE_SCARED:

@@ -4,9 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class CLevelManager : MonoBehaviour
 {
-    public GameObject DeathScreen;
+    private GameObject DeathScreen;
     
     private static CLevelManager _inst;
+
+    [SerializeField]private bool levelIsInterior;
     public static CLevelManager Inst
     {
         get
@@ -51,6 +53,11 @@ public class CLevelManager : MonoBehaviour
         Scene scene = SceneManager.GetActiveScene();
         CGameManager.Inst.LoadScene(scene.name);
         CControllerWave.Inst.StartWave();
+    }
+
+   public bool GetLevelIsInterior()
+    {
+        return levelIsInterior;
     }
     //public void Respawn()
 

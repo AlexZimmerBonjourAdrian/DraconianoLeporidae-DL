@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AK74M
   m_EditorClassIdentifier: 
   weapon_name: AK74M
-  weapon_description: Ak75M, una modernizacion de el ak 47 de 1950, efectiva y brutal
+  weapon_description: Ak74M, una modernizacion de el ak 47 de 1950, efectiva y brutal
   equip_speed: 1
   unequip_speed: 1
   reload_speed: 1.2
@@ -23,9 +23,9 @@ MonoBehaviour:
   offset: 0.3
   multidisparo: 0
   exparsion: 0
-  ammo_in_mag: 60
+  ammo_in_mag: 30
   extra_ammo: 400
   mag_size: 30
   damage: 80
-  fire_rate: 0.8
+  fire_rate: 0.2
   distance: 100

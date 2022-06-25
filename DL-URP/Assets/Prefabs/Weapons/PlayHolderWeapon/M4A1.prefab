@@ -131,6 +131,7 @@ MonoBehaviour:
   shellEjection: {fileID: 1492427713954898471}
   nextShotTime: 0.4
   muzzleFlash: {fileID: 4936666976432423233}
+  marketUI: {fileID: 0}
   _canShoot: 0
   flashes: []
   normalLocalPosition: {x: 0, y: 0, z: 0}
@@ -141,6 +142,9 @@ MonoBehaviour:
   randomizeRecoil: 0
   randomRecoilContraints: {x: 0, y: 0}
   recoilPattern: []
+  maskEnemy:
+    serializedVersion: 2
+    m_Bits: 64
   _spawnShooter: {fileID: 535153539582834941}
 --- !u!114 &4936666976432423233
 MonoBehaviour:
