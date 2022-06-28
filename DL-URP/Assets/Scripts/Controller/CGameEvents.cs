@@ -14,11 +14,20 @@ public class CGameEvents : MonoBehaviour
     }
 
     public event Action onEndAnimation;
+    public event Action OnStartonleadaLevel;
     public void EndAnimation()
     {
         if(onEndAnimation != null)
         {
             onEndAnimation();
+        }
+    }
+
+    public void StartonleadaLevel()
+    {
+        if(OnStartonleadaLevel != null)
+        {
+            StartonleadaLevel();
         }
     }
 }

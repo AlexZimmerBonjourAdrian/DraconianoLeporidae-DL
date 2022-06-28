@@ -52,7 +52,7 @@ public class CLevelManager : MonoBehaviour
     {
         Scene scene = SceneManager.GetActiveScene();
         CGameManager.Inst.LoadScene(scene.name);
-        CControllerWave.Inst.StartWave();
+        //CControllerWave.Inst.StartWave();
     }
 
    public bool GetLevelIsInterior()
