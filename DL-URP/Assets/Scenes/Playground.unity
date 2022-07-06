@@ -1265,15 +1265,15 @@ MonoBehaviour:
   - name: Enemy
     enemy: {fileID: 9119801821592770972, guid: 0b48cf13b71bf4343a003e7061ffa0d4, type: 3}
     count: 3
-    rate: 0.3
+    rate: 1
   - name: Enemy
     enemy: {fileID: 9119801821592770972, guid: 0b48cf13b71bf4343a003e7061ffa0d4, type: 3}
     count: 3
-    rate: 0.3
+    rate: 1
   - name: Enemy
     enemy: {fileID: 9119801821592770972, guid: 0b48cf13b71bf4343a003e7061ffa0d4, type: 3}
     count: 3
-    rate: 0.3
+    rate: 1
   spawnPoints:
   - {fileID: 508653445}
   - {fileID: 787875455}
@@ -6033,9 +6033,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 538b91760b8899a4f961851563d7c7b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slowdownFactor: 0.05
+  slowdownFactor: 0.6
   slowdownLength: 2
-  KeyTime: 102
+  KeyTime: 324
 --- !u!4 &8618260086078336586 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7783542492373588481, guid: b234eb389b67d3f479dd6850b21bb328, type: 3}
