@@ -1,6 +1,6 @@
 //Maya ASCII 2020 scene
 //Name: HandRigging_7_TargeMocap.ma
-//Last modified: Wed, Jul 20, 2022 08:46:08 PM
+//Last modified: Wed, Jul 20, 2022 10:31:13 PM
 //Codeset: 1252
 file -rdi 1 -ns "HandModeling_5" -rfn "HandModeling_5RN" -op "v=0;" -typ "mayaAscii"
 		 "E:/DraconianoLeporidae-DL/Arte/MayaPractice/HandModeling_5.ma";
@@ -19,17 +19,17 @@ fileInfo "product" "Maya 2020";
 fileInfo "version" "2020";
 fileInfo "cutIdentifier" "202011110415-b1e20b88e2";
 fileInfo "osv" "Microsoft Windows 10 Technical Preview  (Build 19044)\n";
-fileInfo "UUID" "B7486C30-46AA-18EB-4A63-4DB1E7CE767C";
+fileInfo "UUID" "77663EE5-44BB-39ED-6233-709738001546";
 createNode transform -s -n "persp";
 	rename -uid "16D1E1E7-4C57-BE9B-62A3-52863C1F49CE";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 0.070647089587417611 2.4389993063693183 -17.405875031875361 ;
-	setAttr ".r" -type "double3" 350.06164726848192 -907.00000000083492 0 ;
+	setAttr ".t" -type "double3" 4.5883516851183552 8.6844292171761239 -19.159563993852721 ;
+	setAttr ".r" -type "double3" 335.06164726848164 -919.40000000082853 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "587909D8-4F33-A112-765D-97A1504A5083";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 17.392282270016171;
+	setAttr ".coi" 21.931207403972696;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
